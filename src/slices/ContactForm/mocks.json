@@ -1,0 +1,71 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Thousand"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum pariatur voluptate velit dolore elit ipsum est pariatur do culpa velit."
+						}
+					}
+				]
+			},
+			"formName": {
+				"__TYPE__": "FieldContent",
+				"value": "stepped",
+				"type": "Text"
+			},
+			"buttonText": {
+				"__TYPE__": "FieldContent",
+				"value": "motion",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "slave",
+							"type": "Text"
+						}
+					],
+					[
+						"placeholder",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "sand",
+							"type": "Text"
+						}
+					],
+					[
+						"type",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Text input",
+							"type": "Select"
+						}
+					]
+				]
+			}
+		]
+	}
+]

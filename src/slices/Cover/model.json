@@ -1,0 +1,50 @@
+{
+	"id": "cover",
+	"type": "SharedSlice",
+	"name": "Cover",
+	"description": "Cover",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "sktwi1xtmkfgx8626",
+			"description": "Cover",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Title",
+						"placeholder": "This is where it all begins...",
+						"allowTargetBlank": true,
+						"single": "heading2"
+					}
+				},
+				"originalImage": {
+					"type": "Image",
+					"config": {
+						"label": "Original Image",
+						"constraint": {
+							"width": 1600,
+							"height": 1600
+						},
+						"thumbnails": []
+					}
+				},
+				"filteredImage": {
+					"type": "Image",
+					"config": {
+						"label": "Filtered Image",
+						"constraint": {
+							"width": 1600,
+							"height": 1600
+						},
+						"thumbnails": []
+					}
+				}
+			},
+			"items": {},
+			"imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+		}
+	]
+}

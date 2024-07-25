@@ -1,0 +1,78 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Course"
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"name",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Worker"
+									}
+								}
+							]
+						}
+					],
+					[
+						"tagline",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "hollow",
+							"type": "Text"
+						}
+					],
+					[
+						"monthly",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "60",
+							"type": "Number"
+						}
+					],
+					[
+						"yearly",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "29",
+							"type": "Number"
+						}
+					],
+					[
+						"features",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Tempor fugiat culpa amet eu culpa ea deserunt. Duis ex et enim mollit occaecat ut fugiat qui ullamco officia elit. Irure consequat in velit exercitation."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

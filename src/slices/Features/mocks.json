@@ -1,0 +1,89 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Spirit"
+						}
+					}
+				]
+			},
+			"features": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": []
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"icon",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+								"width": 8640,
+								"height": 8640
+							},
+							"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?rect=0%2C0%2C8640%2C8640&w=128&h=128",
+							"width": 128,
+							"height": 128,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Receive"
+									}
+								}
+							]
+						}
+					],
+					[
+						"text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Lorem velit dolore ut magna esse duis non laboris consequat incididunt officia in aliqua. Nostrud minim amet labore sunt Lorem dolor excepteur deserunt do ipsum proident. Velit qui velit velit."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

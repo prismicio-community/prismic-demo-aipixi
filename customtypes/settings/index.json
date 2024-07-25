@@ -1,0 +1,73 @@
+{
+	"id": "settings",
+	"label": "Settings",
+	"repeatable": false,
+	"status": true,
+	"format": "custom",
+	"json": {
+		"Main": {
+			"menu": {
+				"config": {
+					"label": "Menu",
+					"fields": {
+						"link": {
+							"config": {
+								"label": "Link",
+								"placeholder": "",
+								"allowTargetBlank": false,
+								"select": null
+							},
+							"type": "Link"
+						},
+						"label": {
+							"config": {
+								"label": "Label",
+								"placeholder": ""
+							},
+							"type": "Text"
+						}
+					}
+				},
+				"type": "Group"
+			},
+			"contact": {
+				"config": {
+					"label": "Contact",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"multi": "paragraph,strong,em,hyperlink"
+				},
+				"type": "StructuredText"
+			},
+			"facebook": {
+				"config": {
+					"label": "Facebook",
+					"placeholder": "",
+					"select": null
+				},
+				"type": "Link"
+			},
+			"twitter": {
+				"config": {
+					"label": "Twitter",
+					"placeholder": "",
+					"select": null
+				},
+				"type": "Link"
+			},
+			"instagram": {
+				"config": {
+					"label": "Instagram",
+					"placeholder": "",
+					"allowTargetBlank": false,
+					"select": null
+				},
+				"type": "Link"
+			},
+			"slices": {
+				"type": "Slices",
+				"fieldset": "Slice Zone"
+			}
+		}
+	}
+}

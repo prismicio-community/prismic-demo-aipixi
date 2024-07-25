@@ -1,0 +1,116 @@
+{
+	"id": "image",
+	"type": "SharedSlice",
+	"name": "Image",
+	"description": "Image",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "sktwi1xtmkfgx8626",
+			"description": "ImageCopy",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"single": "heading1",
+						"label": "Title",
+						"placeholder": "This is where it all begins..."
+					}
+				},
+				"content": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Content",
+						"placeholder": "A nice description of your product",
+						"allowTargetBlank": true,
+						"multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+					}
+				},
+				"image": {
+					"type": "Image",
+					"config": {
+						"label": "Image",
+						"constraint": {
+							"width": 800,
+							"height": 800
+						},
+						"thumbnails": []
+					}
+				},
+				"ctaLink": {
+					"type": "Link",
+					"config": {
+						"label": "CTA link",
+						"placeholder": "",
+						"select": null
+					}
+				},
+				"ctaLabel": {
+					"type": "Text",
+					"config": {
+						"label": "CTA label",
+						"placeholder": ""
+					}
+				}
+			},
+			"items": {},
+			"imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+		},
+		{
+			"id": "left",
+			"name": "Text on Left",
+			"docURL": "...",
+			"version": "sktwi1xtmkfgx8626",
+			"description": "ImageCopy",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"single": "heading1",
+						"label": "Title",
+						"placeholder": "This is where it all begins..."
+					}
+				},
+				"content": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Content",
+						"placeholder": "A nice description of your product",
+						"allowTargetBlank": true,
+						"multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+					}
+				},
+				"image": {
+					"type": "Image",
+					"config": {
+						"label": "Image",
+						"constraint": {
+							"width": 800,
+							"height": 800
+						},
+						"thumbnails": []
+					}
+				},
+				"ctaLink": {
+					"type": "Link",
+					"config": {
+						"label": "CTA link",
+						"placeholder": "",
+						"select": null
+					}
+				},
+				"ctaLabel": {
+					"type": "Text",
+					"config": {
+						"label": "CTA label",
+						"placeholder": ""
+					}
+				}
+			},
+			"items": {},
+			"imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+		}
+	]
+}
