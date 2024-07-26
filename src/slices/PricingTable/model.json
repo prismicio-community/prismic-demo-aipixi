@@ -1,76 +1,76 @@
 {
-  "id": "pricing_table",
-  "type": "SharedSlice",
-  "name": "PricingTable",
-  "description": "PricingTable",
-  "variations": [
-    {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "sktwi1xtmkfgx8626",
-      "description": "PricingTable",
-      "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Title",
-            "placeholder": "This is where it all begins...",
-            "allowTargetBlank": true,
-            "single": "heading2"
-          }
-        },
-        "pricing_tiers": {
-          "type": "Group",
-          "config": {
-            "label": "Pricing Tiers",
-            "repeat": true,
-            "fields": {
-              "name": {
-                "config": {
-                  "label": "Name",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "single": "heading3"
-                },
-                "type": "StructuredText"
-              },
-              "tagline": {
-                "type": "Text",
-                "config": {
-                  "label": "Tagline",
-                  "placeholder": ""
-                }
-              },
-              "monthly": {
-                "config": {
-                  "label": "Monthly",
-                  "placeholder": ""
-                },
-                "type": "Number"
-              },
-              "yearly": {
-                "config": {
-                  "label": "Yearly",
-                  "placeholder": ""
-                },
-                "type": "Number"
-              },
-              "features": {
-                "config": {
-                  "label": "Features",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "single": "list-item"
-                },
-                "type": "StructuredText"
-              }
-            }
-          }
-        }
-      },
-      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
-      "items": {}
-    }
-  ]
+	"id": "pricing_table",
+	"type": "SharedSlice",
+	"name": "PricingTable",
+	"description": "PricingTable",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "sktwi1xtmkfgx8626",
+			"description": "PricingTable",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Title",
+						"placeholder": "This is where it all begins...",
+						"allowTargetBlank": true,
+						"single": "heading2"
+					}
+				},
+				"pricing_tiers": {
+					"type": "Group",
+					"config": {
+						"label": "Pricing Tiers",
+						"repeat": true,
+						"fields": {
+							"name": {
+								"config": {
+									"label": "Name",
+									"placeholder": "",
+									"allowTargetBlank": true,
+									"single": "heading3"
+								},
+								"type": "StructuredText"
+							},
+							"tagline": {
+								"type": "Text",
+								"config": {
+									"label": "Tagline",
+									"placeholder": ""
+								}
+							},
+							"monthly": {
+								"config": {
+									"label": "Monthly",
+									"placeholder": ""
+								},
+								"type": "Number"
+							},
+							"yearly": {
+								"config": {
+									"label": "Yearly",
+									"placeholder": ""
+								},
+								"type": "Number"
+							},
+							"features": {
+								"config": {
+									"label": "Features",
+									"placeholder": "",
+									"allowTargetBlank": true,
+									"single": "list-item"
+								},
+								"type": "StructuredText"
+							}
+						}
+					}
+				}
+			},
+			"imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+			"items": {}
+		}
+	]
 }

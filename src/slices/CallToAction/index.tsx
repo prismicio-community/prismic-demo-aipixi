@@ -3,13 +3,15 @@ import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
+import { Bounded } from "@/components/Bounded";
+import { Heading } from "@/components/Heading";
 import { PrismicNextButtonLink } from "@/components/PrismicNextButtonLink";
 
 type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
 
 const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
 	return (
-		<section className="container my-16 lg:my-40">
+		<Bounded as="section">
 			<div className="-mx-6 overflow-hidden bg-secondary-background sm:-mx-10 sm:flex md:mx-0 md:rounded-lg">
 				<div
 					className={clsx(
@@ -17,9 +19,16 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
 						slice.variation === "left" && "sm:order-2",
 					)}
 				>
+					<div style={{ paddingBottom: "50%" }}>
+						<PrismicNextImage
+							field={slice.primary.image}
+							fill
+							className="relative h-full w-full object-cover"
+						/>
+					</div>
 					<svg
 						className={clsx(
-							"absolute bottom-0 top-0 z-10 hidden h-full w-auto text-secondary-background sm:block",
+							"absolute bottom-0 top-0 hidden h-full w-auto text-secondary-background sm:block",
 							slice.variation === "left"
 								? "left-0 -ml-px"
 								: "right-0 -mr-px -scale-x-100",
@@ -50,18 +59,15 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
 							fill="currentColor"
 						/>
 					</svg>
-					<div style={{ paddingBottom: 50 + "%" }}>
-						<PrismicNextImage
-							field={slice.primary.image}
-							fill
-							className="relative h-full w-full object-cover"
-						/>
-					</div>
 				</div>
 				<div className="flex flex-col items-start justify-center p-8 sm:w-1/2 lg:p-16">
-					<h2 className="font-heading text-2xl lg:text-4xl">
+					<Heading
+						as="h2"
+						size="md"
+						className="font-heading text-2xl lg:text-4xl"
+					>
 						<PrismicText field={slice.primary.title} />
-					</h2>
+					</Heading>
 					<PrismicNextButtonLink
 						field={slice.primary.link}
 						className="mt-6 lg:mt-8"
@@ -70,7 +76,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
 					</PrismicNextButtonLink>
 				</div>
 			</div>
-		</section>
+		</Bounded>
 	);
 };
 

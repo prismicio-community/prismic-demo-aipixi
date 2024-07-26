@@ -9,8 +9,11 @@ import {
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clsx from "clsx";
+
+import { Bounded } from "@/components/Bounded";
+import { Heading } from "@/components/Heading";
 
 gsap.registerPlugin(ScrollTrigger);
 registerGSAPCounterEffect();
@@ -75,10 +78,10 @@ const PricingTable = ({ slice }: PricingTableProps): JSX.Element => {
 	}
 
 	return (
-		<section ref={container} className="container my-16 lg:my-40">
-			<h2 className="text-center font-heading text-2xl md:text-4xl">
+		<Bounded as="section" ref={container}>
+			<Heading as="h2" size="lg" className="text-center">
 				<PrismicText field={slice.primary.title} />
-			</h2>
+			</Heading>
 
 			<div className="my-8 flex items-center justify-center space-x-6 font-heading">
 				<button
@@ -121,9 +124,9 @@ const PricingTable = ({ slice }: PricingTableProps): JSX.Element => {
 						key={asText(item.name)}
 						className="pricing-card mt-4 rounded-lg bg-secondary-background p-10 first:mt-0 lg:mt-0 lg:w-1/3"
 					>
-						<h3 className="text-center font-heading text-2xl md:text-3xl">
+						<Heading as="h3" size="md" className="text-center">
 							<PrismicText field={item.name} />
-						</h3>
+						</Heading>
 						<div className="my-4 text-center sm:my-6">{item.tagline}</div>
 						<div className="my-4 -mr-4 flex justify-center text-center font-heading text-xl sm:my-6">
 							<span className="leading-6">€</span>
@@ -145,7 +148,7 @@ const PricingTable = ({ slice }: PricingTableProps): JSX.Element => {
 					</div>
 				))}
 			</div>
-		</section>
+		</Bounded>
 	);
 };
 

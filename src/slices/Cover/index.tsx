@@ -7,6 +7,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Heading } from "@/components/Heading";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -75,17 +76,9 @@ const Cover = ({ slice }: CoverProps): JSX.Element => {
 	return (
 		<section
 			ref={container}
-			className="cover relative overflow-hidden"
-			style={{ paddingBottom: 50 + "%" }}
+			className="relative overflow-hidden"
+			style={{ paddingBottom: "50%" }}
 		>
-			<div className="absolute inset-0 z-10 flex items-center justify-center">
-				<h2
-					ref={title}
-					className="max-w-xl px-10 text-center font-heading text-2xl text-white md:text-4xl lg:text-5xl"
-				>
-					<PrismicText field={slice.primary.title} />
-				</h2>
-			</div>
 			<div ref={filteredImage} className="absolute left-0 w-full">
 				{isFilled.image(slice.primary.filteredImage) && (
 					<PrismicNextImage
@@ -99,6 +92,16 @@ const Cover = ({ slice }: CoverProps): JSX.Element => {
 					field={slice.primary.originalImage}
 					className="w-full"
 				/>
+			</div>
+			<div className="absolute inset-0 flex items-center justify-center">
+				<Heading
+					ref={title}
+					as="h2"
+					size="lg"
+					className="max-w-xl px-10 text-center text-white lg:text-5xl lg:leading-tight"
+				>
+					<PrismicText field={slice.primary.title} />
+				</Heading>
 			</div>
 		</section>
 	);

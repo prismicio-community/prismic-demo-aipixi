@@ -3,14 +3,17 @@ import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
+import { Heading } from "@/components/Heading";
+import { Bounded } from "@/components/Bounded";
+
 type ImageGridProps = SliceComponentProps<Content.ImageGridSlice>;
 
 const ImageGrid = ({ slice }: ImageGridProps): JSX.Element => {
 	return (
-		<section className="container my-16 lg:my-40">
-			<h2 className="mx-auto max-w-xl text-center font-heading text-2xl md:text-4xl">
+		<Bounded as="section">
+			<Heading as="h2" size="lg" className="mx-auto max-w-xl text-center">
 				<PrismicText field={slice.primary.title} />
-			</h2>
+			</Heading>
 			<div className="mt-8 grid grid-flow-row-dense grid-cols-2 gap-4 md:mt-16 md:grid-cols-3 md:gap-10">
 				{slice.primary.images.map((item, i) => (
 					<div
@@ -28,13 +31,17 @@ const ImageGrid = ({ slice }: ImageGridProps): JSX.Element => {
 							sizes={getImageSizes(i)}
 							className="rounded-lg"
 						/>
-						<span className="absolute bottom-4 left-4 font-heading text-sm text-white md:bottom-6 md:left-8 md:text-2xl">
+						<Heading
+							as="span"
+							size="xs"
+							className="absolute bottom-4 left-4 text-white md:bottom-6 md:left-8"
+						>
 							{item.label}
-						</span>
+						</Heading>
 					</div>
 				))}
 			</div>
-		</section>
+		</Bounded>
 	);
 };
 

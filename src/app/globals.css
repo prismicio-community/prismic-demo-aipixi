@@ -2,29 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg-primary: #f9f9f9;
-  --bg-secondary: #fff;
-  --text-primary: #22262c;
-
-  --brand-primary: #853aff;
-  --brand-primary-light: #ab78ff;
+[data-collapsible] + [data-collapsible] {
+	padding-top: 0;
 }
 
-[data-theme="dark"] {
-  --bg-primary: #040921;
-  --bg-secondary: #101739;
-  --text-primary: #ffffff;
+:root {
+	--bg-primary: #f9f9f9;
+	--bg-secondary: #fff;
+	--text-primary: #22262c;
+
+	--brand-primary: #853aff;
+	--brand-primary-light: #ab78ff;
+}
+
+.dark {
+	--bg-primary: #040921;
+	--bg-secondary: #101739;
+	--text-primary: #ffffff;
 }
 
 .dark-mode body {
-  @apply antialiased;
+	@apply antialiased;
 }
 
 .container {
-  @apply max-w-[1280px];
+	@apply max-w-[1280px];
 }
 
 .hero-slice + section {
-  @apply mt-0;
+	@apply mt-0;
 }

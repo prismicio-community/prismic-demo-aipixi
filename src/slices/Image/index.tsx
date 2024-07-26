@@ -8,12 +8,14 @@ import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
 import { PrismicNextButtonLink } from "@/components/PrismicNextButtonLink";
+import { Bounded } from "@/components/Bounded";
+import { Heading } from "@/components/Heading";
 
 type ImageProps = SliceComponentProps<Content.ImageSlice>;
 
 const Image = ({ slice }: ImageProps): JSX.Element => {
 	return (
-		<section className="container my-16 lg:my-40">
+		<Bounded as="section">
 			<div className="-mx-6 flex flex-col sm:-mx-10 sm:grid sm:grid-cols-12 md:mx-0 lg:gap-10">
 				<div
 					style={{ paddingBottom: 100 + "%" }}
@@ -33,15 +35,15 @@ const Image = ({ slice }: ImageProps): JSX.Element => {
 
 				<div
 					className={clsx(
-						"z-10 order-2 flex flex-col items-start justify-center bg-secondary-background p-8 sm:col-span-6 sm:row-span-full sm:self-stretch lg:col-span-8 lg:self-center lg:rounded-lg lg:p-16",
+						"relative order-2 flex flex-col items-start justify-center bg-secondary-background p-8 sm:col-span-6 sm:row-span-full sm:self-stretch lg:col-span-8 lg:self-center lg:rounded-lg lg:p-16",
 						slice.variation === "left"
 							? "sm:col-start-1 md:rounded-l-lg lg:col-start-1"
 							: "sm:col-start-7 md:rounded-r-lg lg:col-start-5",
 					)}
 				>
-					<h2 className="font-heading text-2xl lg:text-4xl">
+					<Heading as="h2" size="lg">
 						<PrismicText field={slice.primary.title} />
-					</h2>
+					</Heading>
 
 					<div className="rich-text-content mt-6 text-sm opacity-70 lg:text-base">
 						<PrismicRichText field={slice.primary.content} />
@@ -56,7 +58,7 @@ const Image = ({ slice }: ImageProps): JSX.Element => {
 					)}
 				</div>
 			</div>
-		</section>
+		</Bounded>
 	);
 };
 

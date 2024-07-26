@@ -6,16 +6,18 @@ import {
 } from "@prismicio/react";
 
 import { Button } from "@/components/Button";
+import { Bounded } from "@/components/Bounded";
+import { Heading } from "@/components/Heading";
 
 type ContactFormProps = SliceComponentProps<Content.ContactFormSlice>;
 
 const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 	return (
-		<section className="container my-16 md:flex md:space-x-10 lg:my-40">
+		<Bounded as="section" className="md:flex md:space-x-10">
 			<div className="md:w-1/2 lg:pr-28">
-				<h2 className="font-heading text-2xl md:text-4xl">
+				<Heading as="h2" size="lg">
 					<PrismicText field={slice.primary.title} />
-				</h2>
+				</Heading>
 				<div className="mt-4 text-sm opacity-70 md:mt-8 md:text-base">
 					<PrismicRichText field={slice.primary.description} />
 				</div>
@@ -66,7 +68,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 					{slice.primary.buttonText}
 				</Button>
 			</form>
-		</section>
+		</Bounded>
 	);
 };
 
