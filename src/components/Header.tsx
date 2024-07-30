@@ -1,8 +1,9 @@
 import { SVGProps } from "react";
 import { createClient } from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
 
 import { repositoryName } from "@/prismicio";
-import { PrismicNextLink } from "@prismicio/next";
+
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 import {
