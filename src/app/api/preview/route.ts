@@ -1,13 +1,13 @@
 import { NextRequest } from "next/server";
-import { redirectToPreviewURL } from "@prismicio/next";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-import { createClient } from "@/prismicio";
+export function GET(request: NextRequest) {
+	const session = request.nextUrl.searchParams.get("session");
 
-/**
- * This endpoint handles previews that are launched from the Page Builder.
- */
-export async function GET(request: NextRequest) {
-	const client = createClient();
+	if (session) {
+		cookies().set("$$-demo-session-id", session);
+	}
 
-	return await redirectToPreviewURL({ client, request });
+	return redirect(`/`);
 }
