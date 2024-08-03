@@ -1,13 +1,10 @@
 import { NextRequest } from "next/server";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { redirectToPreviewURL } from "@prismicio/next";
 
-export function GET(request: NextRequest) {
-	const session = request.nextUrl.searchParams.get("session");
+import { createClient } from "@/prismicio";
 
-	if (session) {
-		cookies().set("$$-demo-session-id", session);
-	}
+export async function GET(request: NextRequest) {
+	const client = createClient();
 
-	return redirect(`/`);
+	return await redirectToPreviewURL({ client, request });
 }

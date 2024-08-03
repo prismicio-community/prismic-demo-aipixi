@@ -1,10 +1,8 @@
-import { PrismicPreview } from "@prismicio/next";
 import { MuseoModerno } from "next/font/google";
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import clsx from "clsx";
 
-import { repositoryName } from "@/prismicio";
 import { Background } from "@/components/Background";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -36,7 +34,10 @@ export default function RootLayout({
 			className={clsx(museoModerno.variable, roboto.variable)}
 			suppressHydrationWarning
 		>
-			<body className="relative min-h-screen bg-primary-background text-primary-text">
+			<body
+				className="relative min-h-screen bg-primary-background text-primary-text"
+				suppressHydrationWarning
+			>
 				<ThemeProvider attribute="class">
 					<Background />
 					<Header />
@@ -44,7 +45,6 @@ export default function RootLayout({
 					<Footer />
 				</ThemeProvider>
 			</body>
-			<PrismicPreview repositoryName={repositoryName} />
 		</html>
 	);
 }

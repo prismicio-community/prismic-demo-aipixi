@@ -6,9 +6,9 @@
 	"author": "Prismic <contact@prismic.io> (https://prismic.io)",
 	"scripts": {
 		"dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
-		"next:dev": "next dev",
+		"next:dev": "next dev --port=4000",
 		"build": "next build",
-		"start": "next start",
+		"start": "next start --port=4000",
 		"lint": "next lint",
 		"slicemachine": "start-slicemachine",
 		"format": "prettier --write ."
