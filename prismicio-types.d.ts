@@ -91,7 +91,7 @@ interface PageDocumentData {
 	 * - **Field Type**: Title
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: page.metaTitle
-	 * - **Tab**: Meta
+	 * - **Tab**: SEO
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */;
 	metaTitle: prismic.TitleField;
@@ -102,7 +102,7 @@ interface PageDocumentData {
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: page.metaDescription
-	 * - **Tab**: Meta
+	 * - **Tab**: SEO
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	metaDescription: prismic.RichTextField;
