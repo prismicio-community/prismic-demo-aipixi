@@ -21,6 +21,15 @@ export default {
 			fontFamily: {
 				heading: ["var(--font-museo-moderno)", "sans-serif"],
 				sans: ["var(--font-roboto)", "sans-serif"],
+				system: [
+					"ui-sans-serif",
+					"system-ui",
+					"sans-serif",
+					'"Apple Color Emoji"',
+					'"Segoe UI Emoji"',
+					'"Segoe UI Symbol"',
+					'"Noto Color Emoji"',
+				],
 			},
 		},
 	},
