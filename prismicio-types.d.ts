@@ -677,11 +677,11 @@ export interface HeroSliceDefaultPrimaryLinksItem {
 }
 
 /**
- * Item in *Hero → Text to Left → Primary → Links*
+ * Item in *Hero → Text on Left → Primary → Links*
  */
 export interface HeroSliceLeftPrimaryLinksItem {
 	/**
-	 * Link field in *Hero → Text to Left → Primary → Links*
+	 * Link field in *Hero → Text on Left → Primary → Links*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -691,7 +691,7 @@ export interface HeroSliceLeftPrimaryLinksItem {
 	link: prismic.LinkField;
 
 	/**
-	 * Label field in *Hero → Text to Left → Primary → Links*
+	 * Label field in *Hero → Text on Left → Primary → Links*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -750,11 +750,11 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Hero → Text to Left → Primary*
+ * Primary content in *Hero → Text on Left → Primary*
  */
 export interface HeroSliceLeftPrimary {
 	/**
-	 * Image field in *Hero → Text to Left → Primary*
+	 * Image field in *Hero → Text on Left → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
@@ -764,7 +764,7 @@ export interface HeroSliceLeftPrimary {
 	image: prismic.ImageField<never>;
 
 	/**
-	 * Title field in *Hero → Text to Left → Primary*
+	 * Title field in *Hero → Text on Left → Primary*
 	 *
 	 * - **Field Type**: Title
 	 * - **Placeholder**: This is where it all begins...
@@ -774,7 +774,7 @@ export interface HeroSliceLeftPrimary {
 	title: prismic.TitleField;
 
 	/**
-	 * Links field in *Hero → Text to Left → Primary*
+	 * Links field in *Hero → Text on Left → Primary*
 	 *
 	 * - **Field Type**: Group
 	 * - **Placeholder**: *None*
@@ -785,7 +785,7 @@ export interface HeroSliceLeftPrimary {
 }
 
 /**
- * Text to Left variation for Hero Slice
+ * Text on Left variation for Hero Slice
  *
  * - **API ID**: `left`
  * - **Description**: Hero

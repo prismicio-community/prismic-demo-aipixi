@@ -6,13 +6,6 @@
 	"format": "page",
 	"json": {
 		"Main": {
-			"uid": {
-				"type": "UID",
-				"config": {
-					"label": "UID",
-					"placeholder": ""
-				}
-			},
 			"slices": {
 				"type": "Slices",
 				"fieldset": "Slice Zone",
@@ -47,6 +40,13 @@
 			}
 		},
 		"SEO": {
+			"uid": {
+				"type": "UID",
+				"config": {
+					"label": "UID",
+					"placeholder": ""
+				}
+			},
 			"metaTitle": {
 				"type": "StructuredText",
 				"config": {
