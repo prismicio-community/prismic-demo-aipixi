@@ -75,8 +75,8 @@ export const SocialProof = ({ slice }: { slice: Content.HeroSlice }) => {
 							</div>
 						</div>
 						<p className="mt-4 max-w-80 text-lg font-medium italic opacity-75">
-							"Aipixi is amazing and I love it. It's the best thing since sliced
-							bread!"
+							&quot;Aipixi is amazing and I love it. It&apos;s the best thing
+							since sliced bread!&quot;
 						</p>
 					</div>
 				</div>
