@@ -19,11 +19,12 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
 						slice.variation === "left" && "sm:order-2",
 					)}
 				>
-					<div style={{ paddingBottom: "50%" }}>
+					<div className="relative h-full pb-[50%]">
 						<PrismicNextImage
 							field={slice.primary.image}
 							fill
-							className="relative h-full w-full object-cover"
+							sizes="(min-width: 640px) 50vw, 100vw"
+							className="object-cover"
 						/>
 					</div>
 					<svg
