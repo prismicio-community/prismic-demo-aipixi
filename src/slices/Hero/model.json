@@ -55,17 +55,17 @@
             }
           }
         },
-        "social_proof_text": {
+        "social_proof_quote": {
           "type": "Text",
           "config": {
-            "label": "Social proof text",
+            "label": "Social Proof Quote",
             "placeholder": ""
           }
         },
         "social_proof_rating": {
           "type": "Number",
           "config": {
-            "label": "Social proof rating",
+            "label": "Social Proof Rating",
             "placeholder": ""
           }
         }

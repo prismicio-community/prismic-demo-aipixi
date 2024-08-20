@@ -33,7 +33,7 @@ interface HomeDocumentData {
 	 * - **Field Type**: Title
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: home.metaTitle
-	 * - **Tab**: Meta
+	 * - **Tab**: SEO
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */;
 	metaTitle: prismic.TitleField;
@@ -44,7 +44,7 @@ interface HomeDocumentData {
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: home.metaDescription
-	 * - **Tab**: Meta
+	 * - **Tab**: SEO
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	metaDescription: prismic.RichTextField;
@@ -726,17 +726,17 @@ export interface HeroSliceDefaultPrimary {
 	links: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryLinksItem>>;
 
 	/**
-	 * Social proof text field in *Hero → Default → Primary*
+	 * Social Proof Quote field in *Hero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.default.primary.social_proof_text
+	 * - **API ID Path**: hero.default.primary.social_proof_quote
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	social_proof_text: prismic.KeyTextField;
+	social_proof_quote: prismic.KeyTextField;
 
 	/**
-	 * Social proof rating field in *Hero → Default → Primary*
+	 * Social Proof Rating field in *Hero → Default → Primary*
 	 *
 	 * - **Field Type**: Number
 	 * - **Placeholder**: *None*

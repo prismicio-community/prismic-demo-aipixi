@@ -46,15 +46,15 @@
 					}
 				]
 			},
-			"social_proof_text": {
-				"__TYPE__": "FieldContent",
-				"value": "height",
-				"type": "Text"
-			},
 			"social_proof_rating": {
 				"__TYPE__": "FieldContent",
-				"value": "59",
+				"value": "32",
 				"type": "Number"
+			},
+			"social_proof_quote": {
+				"__TYPE__": "FieldContent",
+				"value": "lips",
+				"type": "Text"
 			}
 		},
 		"items": [
