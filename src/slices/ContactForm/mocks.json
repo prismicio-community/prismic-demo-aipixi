@@ -25,15 +25,44 @@
 					}
 				]
 			},
-			"formName": {
+			"submitButtonLabel": {
 				"__TYPE__": "FieldContent",
-				"value": "stepped",
+				"value": "duty",
 				"type": "Text"
 			},
-			"buttonText": {
-				"__TYPE__": "FieldContent",
-				"value": "motion",
-				"type": "Text"
+			"fields": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "late",
+									"type": "Text"
+								}
+							],
+							[
+								"placeholder",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "slide",
+									"type": "Text"
+								}
+							],
+							[
+								"type",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Multiline text",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": [
