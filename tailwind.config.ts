@@ -7,15 +7,15 @@ export default {
 		extend: {
 			colors: {
 				primary: {
-					background: "var(--bg-primary)",
-					text: "var(--text-primary)",
+					background: "rgb(var(--bg-primary) / <alpha-value>)",
+					text: "rgb(var(--text-primary) / <alpha-value>)",
 					brand: {
-						DEFAULT: "var(--brand-primary)",
-						light: "var(--brand-primary-light)",
+						DEFAULT: "rgb(var(--brand-primary) / <alpha-value>)",
+						light: "rgb(var(--brand-primary-light) / <alpha-value>)",
 					},
 				},
 				secondary: {
-					background: "var(--bg-secondary)",
+					background: "rgb(var(--bg-secondary) / <alpha-value>)",
 				},
 			},
 			fontFamily: {

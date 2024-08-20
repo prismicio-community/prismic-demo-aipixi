@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { asText, type Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import {
@@ -7,12 +8,15 @@ import {
 	PrismicText,
 	SliceComponentProps,
 } from "@prismicio/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
-import gsap from "gsap";
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
 
@@ -24,8 +28,7 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: container.current,
-					start: "top 90%",
-					end: "bottom 100%",
+					end: "center 75%",
 					scrub: true,
 				},
 			});

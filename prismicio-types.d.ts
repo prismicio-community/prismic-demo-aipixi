@@ -794,17 +794,17 @@ export interface HeroSliceLeftPrimary {
 	links: prismic.GroupField<Simplify<HeroSliceLeftPrimaryLinksItem>>;
 
 	/**
-	 * Social proof text field in *Hero → Text on Left → Primary*
+	 * Social Proof Quote field in *Hero → Text on Left → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.left.primary.social_proof_text
+	 * - **API ID Path**: hero.left.primary.social_proof_quote
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	social_proof_text: prismic.KeyTextField;
+	social_proof_quote: prismic.KeyTextField;
 
 	/**
-	 * Social proof rating field in *Hero → Text on Left → Primary*
+	 * Social Proof Rating field in *Hero → Text on Left → Primary*
 	 *
 	 * - **Field Type**: Number
 	 * - **Placeholder**: *None*

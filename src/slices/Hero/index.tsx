@@ -2,53 +2,62 @@ import { type Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
-import { SocialProof } from "@/components/SocialProof";
 
-import { PrismicNextButtonLink } from "@/components/PrismicNextButtonLink";
+import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
+import { PrismicNextButtonLink } from "@/components/PrismicNextButtonLink";
+import { SocialProof } from "@/components/SocialProof";
 
 type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps): JSX.Element => {
 	return (
-		<div className="px-6 sm:px-10">
-			<section className="mx-auto flex min-h-screen w-full max-w-[80rem] flex-col items-center justify-center md:flex-row md:justify-between">
-				{isFilled.image(slice.primary.image) && (
-					<div
-						className={clsx(
-							"w-2/4 flex-grow-0 md:w-5/12",
-							slice.variation === "left" && "md:order-2",
-						)}
-					>
-						<PrismicNextImage field={slice.primary.image} />
-					</div>
+		<Bounded
+			as="section"
+			paddingY="none"
+			className="grid min-h-screen content-center items-center justify-items-center gap-8 md:grid-cols-12 md:gap-10"
+		>
+			{isFilled.image(slice.primary.image) && (
+				<PrismicNextImage
+					field={slice.primary.image}
+					className="w-1/2 md:col-span-6 md:w-full lg:col-span-5"
+				/>
+			)}
+			<div
+				className={clsx(
+					"text-center",
+					slice.primary.image.url &&
+						"grid gap-8 md:col-span-6 md:gap-10 md:text-left lg:col-span-7",
 				)}
-				<div
-					className={clsx(
-						"text-center",
-						slice.primary.image.url && "mt-8 md:mt-0 md:w-6/12 md:text-left",
-					)}
-				>
-					<Heading as="h1" size="xl" className="max-w-xl">
-						<PrismicText field={slice.primary.title} />
-					</Heading>
-					{isFilled.group(slice.primary.links) && (
-						<nav className="-m-2 mt-8">
-							{slice.primary.links.map((item) => (
+			>
+				<Heading as="h1" size="xl" className="max-w-xl">
+					<PrismicText field={slice.primary.title} />
+				</Heading>
+				{isFilled.group(slice.primary.links) && (
+					<ul className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+						{slice.primary.links.map((item) => (
+							<li key={item.label}>
 								<PrismicNextButtonLink
 									field={item.link}
 									key={item.label}
-									className="m-2"
+									className="w-full sm:w-auto"
 								>
 									{item.label}
 								</PrismicNextButtonLink>
-							))}
-						</nav>
-					)}
-					<SocialProof slice={slice} />
-				</div>
-			</section>
-		</div>
+							</li>
+						))}
+					</ul>
+				)}
+				{isFilled.number(slice.primary.social_proof_rating) &&
+				isFilled.keyText(slice.primary.social_proof_quote) ? (
+					<SocialProof
+						rating={slice.primary.social_proof_rating}
+						quote={slice.primary.social_proof_quote}
+						className="max-w-96"
+					/>
+				) : null}
+			</div>
+		</Bounded>
 	);
 };
 

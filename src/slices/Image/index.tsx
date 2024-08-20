@@ -9,30 +9,19 @@ import {
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
+import { useScrollTriggerFadeIn } from "@/lib/useScrollTriggerFadeIn";
 import { PrismicNextButtonLink } from "@/components/PrismicNextButtonLink";
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-
 type ImageProps = SliceComponentProps<Content.ImageSlice>;
 
 const Image = ({ slice }: ImageProps): JSX.Element => {
-	const scrollRef = useRef<HTMLDivElement>(null);
-	const { scrollYProgress } = useScroll({
-		target: scrollRef,
-		offset: ["start end", "end end"],
-	});
+	const container = useScrollTriggerFadeIn();
 
-	const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
 	return (
-		<Bounded as="section">
-			<motion.div
-				ref={scrollRef}
-				style={{ opacity: scrollYProgress, scale }}
-				className="-mx-6 flex flex-col sm:-mx-10 sm:grid sm:grid-cols-12 md:mx-0 lg:gap-10"
-			>
+		<Bounded ref={container} as="section">
+			<div className="-mx-6 flex flex-col sm:-mx-10 sm:grid sm:grid-cols-12 md:mx-0 lg:gap-10">
 				<div
 					style={{ paddingBottom: 100 + "%" }}
 					className={clsx(
@@ -73,7 +62,7 @@ const Image = ({ slice }: ImageProps): JSX.Element => {
 						</PrismicNextButtonLink>
 					)}
 				</div>
-			</motion.div>
+			</div>
 		</Bounded>
 	);
 };

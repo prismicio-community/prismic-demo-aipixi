@@ -130,15 +130,15 @@
 					}
 				]
 			},
-			"social_proof_text": {
-				"__TYPE__": "FieldContent",
-				"value": "below",
-				"type": "Text"
-			},
 			"social_proof_rating": {
 				"__TYPE__": "FieldContent",
-				"value": "49",
+				"value": "53",
 				"type": "Number"
+			},
+			"social_proof_quote": {
+				"__TYPE__": "FieldContent",
+				"value": "grown",
+				"type": "Text"
 			}
 		},
 		"items": [

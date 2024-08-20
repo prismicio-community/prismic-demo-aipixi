@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 type BoundedProps = {
 	as: "section" | "header" | "footer";
-	paddingY?: "sm" | "base" | "lg" | "special";
+	paddingY?: "none" | "sm" | "base" | "lg";
 	collapsible?: boolean;
 	className?: string;
 	outerClassName?: string;

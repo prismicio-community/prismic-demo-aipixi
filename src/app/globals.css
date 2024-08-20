@@ -7,18 +7,18 @@
 }
 
 :root {
-	--bg-primary: #f9f9f9;
-	--bg-secondary: #fff;
-	--text-primary: #22262c;
+	--bg-primary: 249 249 249;
+	--bg-secondary: 255 255 255;
+	--text-primary: 34 38 44;
 
-	--brand-primary: #853aff;
-	--brand-primary-light: #ab78ff;
+	--brand-primary: 133 58 255;
+	--brand-primary-light: 171 120 255;
 }
 
 .dark {
-	--bg-primary: #040921;
-	--bg-secondary: #101739;
-	--text-primary: #ffffff;
+	--bg-primary: 4 9 33;
+	--bg-secondary: 16 23 57;
+	--text-primary: 255 255 255;
 }
 
 .dark-mode body {

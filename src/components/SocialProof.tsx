@@ -1,4 +1,4 @@
-import { Content, isFilled } from "@prismicio/client";
+import clsx from "clsx";
 import { Star, StarHalf } from "lucide-react";
 import Image from "next/image";
 
@@ -38,49 +38,52 @@ const generateStars = (rating: number) => {
 	return stars;
 };
 
-export const SocialProof = ({ slice }: { slice: Content.HeroSlice }) => {
+type SocialProofProps = {
+	rating: number;
+	quote: string;
+	className?: string;
+};
+
+export const SocialProof = ({ rating, quote, className }: SocialProofProps) => {
 	return (
-		isFilled.keyText(slice.primary.social_proof_text) &&
-		isFilled.number(slice.primary.social_proof_rating) && (
-			<div className="mt-8 flex items-start justify-center md:justify-start">
-				<div className="relative flex overflow-hidden rounded-lg">
-					<div className="absolute inset-0 bg-primary-background opacity-50" />
-					<div className="relative z-10 flex flex-col p-6">
-						<div className="flex items-center gap-4">
-							<div className="flex">
-								<Image
-									className="relative z-30 rounded-full border-4 border-white shadow-lg"
-									src="/pp1.webp"
-									width={48}
-									height={48}
-									alt=""
-								/>
-								<Image
-									className="relative z-20 -ml-7 rounded-full border-4 border-white shadow-lg"
-									src="/pp2.webp"
-									width={48}
-									height={48}
-									alt=""
-								/>
-								<Image
-									className="relative z-10 -ml-7 rounded-full border-4 border-white"
-									src="/pp3.webp"
-									width={48}
-									height={48}
-									alt=""
-								/>
-							</div>
-							<div className="flex gap-1">
-								{generateStars(slice.primary.social_proof_rating)}
-							</div>
-						</div>
-						<p className="mt-4 max-w-80 text-lg font-medium italic opacity-75">
-							&quot;Aipixi is amazing and I love it. It&apos;s the best thing
-							since sliced bread!&quot;
-						</p>
+		<div
+			className={clsx(
+				"bg-primary-background/50 flex items-start justify-center rounded-lg md:justify-start",
+				className,
+			)}
+		>
+			<div className="relative z-10 flex flex-col p-6">
+				<div className="flex items-center gap-4">
+					<div className="flex">
+						<Image
+							className="relative z-30 rounded-full border-4 border-white shadow-lg"
+							src="/pp1.webp"
+							width={48}
+							height={48}
+							alt=""
+						/>
+						<Image
+							className="relative z-20 -ml-7 rounded-full border-4 border-white shadow-lg"
+							src="/pp2.webp"
+							width={48}
+							height={48}
+							alt=""
+						/>
+						<Image
+							className="relative z-10 -ml-7 rounded-full border-4 border-white"
+							src="/pp3.webp"
+							width={48}
+							height={48}
+							alt=""
+						/>
 					</div>
+					<div className="flex gap-1">{generateStars(rating)}</div>
 				</div>
+				<p className="mt-4 text-lg font-medium italic opacity-75">
+					<span className="-ml-1">&ldquo;</span>
+					{quote}&rdquo;
+				</p>
 			</div>
-		)
+		</div>
 	);
 };

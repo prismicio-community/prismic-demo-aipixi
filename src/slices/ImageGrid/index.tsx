@@ -5,37 +5,50 @@ import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
-import { motion, useScroll } from "framer-motion";
-
+import { useScrollTriggerFadeIn } from "@/lib/useScrollTriggerFadeIn";
 import { Heading } from "@/components/Heading";
 import { Bounded } from "@/components/Bounded";
-import { useRef } from "react";
 
 type ImageGridProps = SliceComponentProps<Content.ImageGridSlice>;
 
-const Image = ({ item, i }: { item: any; i: number }) => {
-	const scrollRef = useRef<HTMLDivElement>(null);
-	const { scrollYProgress } = useScroll({
-		target: scrollRef,
-		offset: ["start end", "end end"],
-	});
+const ImageGrid = ({ slice }: ImageGridProps): JSX.Element => {
+	return (
+		<Bounded as="section">
+			<Heading as="h2" size="lg" className="mx-auto max-w-xl text-center">
+				<PrismicText field={slice.primary.title} />
+			</Heading>
+			<div className="mt-8 grid grid-flow-row-dense grid-cols-2 gap-4 md:mt-16 md:grid-cols-3 md:gap-10">
+				{slice.primary.images.map((item, index) => (
+					<ImageGridItem key={item.label} item={item} index={index} />
+				))}
+			</div>
+		</Bounded>
+	);
+};
+
+function ImageGridItem({
+	item,
+	index,
+}: {
+	item: Content.ImageGridSliceDefaultPrimaryImagesItem;
+	index: number;
+}) {
+	const container = useScrollTriggerFadeIn<HTMLDivElement>();
 
 	return (
-		<motion.div
-			ref={scrollRef}
-			style={{ opacity: scrollYProgress }}
-			key={item.label}
+		<div
+			ref={container}
 			className={clsx(
 				"relative",
-				i % 6 === 0 || i % 6 === 5
+				index % 6 === 0 || index % 6 === 5
 					? "col-span-2 row-span-2"
 					: "col-span-1 row-span-1",
-				i % 6 === 4 && "md:col-start-1",
+				index % 6 === 4 && "md:col-start-1",
 			)}
 		>
 			<PrismicNextImage
 				field={item.image}
-				sizes={getImageSizes(i)}
+				sizes={getImageSizes(index)}
 				className="rounded-lg"
 			/>
 			<Heading
@@ -45,24 +58,9 @@ const Image = ({ item, i }: { item: any; i: number }) => {
 			>
 				{item.label}
 			</Heading>
-		</motion.div>
+		</div>
 	);
-};
-
-const ImageGrid = ({ slice }: ImageGridProps): JSX.Element => {
-	return (
-		<Bounded as="section">
-			<Heading as="h2" size="lg" className="mx-auto max-w-xl text-center">
-				<PrismicText field={slice.primary.title} />
-			</Heading>
-			<div className="mt-8 grid grid-flow-row-dense grid-cols-2 gap-4 md:mt-16 md:grid-cols-3 md:gap-10">
-				{slice.primary.images.map((item, i) => (
-					<Image key={i} item={item} i={i} />
-				))}
-			</div>
-		</Bounded>
-	);
-};
+}
 
 function getImageSizes(index: number) {
 	let sizes = "";
