@@ -4,25 +4,27 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import bgLightSVG from "../assets/bg-light.svg";
 import bgDarkSVG from "../assets/bg-dark.svg";
-import { useEffect, useState } from "react";
-import clsx from "clsx";
+import { useEffect, useState, useRef } from "react";
 
 export function Background() {
 	const { resolvedTheme } = useTheme();
 	const [bgImage, setBgImage] = useState<string>(bgLightSVG);
+	const bgRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		setBgImage(resolvedTheme === "dark" ? bgDarkSVG : bgLightSVG);
+
+		if (resolvedTheme === "dark") {
+			bgRef.current?.classList.add("opacity-40");
+		} else {
+			bgRef.current?.classList.remove("opacity-40");
+		}
 	}, [resolvedTheme]);
 
 	return (
 		<div
-			className={clsx(
-				"pointer-events-none absolute inset-0 min-h-screen overflow-hidden",
-				{
-					"opacity-40": resolvedTheme === "dark",
-				},
-			)}
+			ref={bgRef}
+			className="pointer-events-none absolute inset-0 min-h-screen overflow-hidden"
 		>
 			<div className="absolute left-0 right-0 top-0 pb-[186.66666667%]">
 				<Image

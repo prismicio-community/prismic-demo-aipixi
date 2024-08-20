@@ -128,7 +128,9 @@ const PricingTable = ({ slice }: PricingTableProps): JSX.Element => {
 						<Heading as="h3" size="md" className="text-center">
 							<PrismicText field={item.name} />
 						</Heading>
-						<div className="my-4 text-center sm:my-6">{item.tagline}</div>
+						<div className="my-4 mt-0 p-2 text-center font-semibold opacity-50">
+							{item.tagline}
+						</div>
 						<div className="my-4 -mr-4 flex justify-center text-center font-heading text-xl sm:my-6">
 							<span className="leading-6">€</span>
 							<div
