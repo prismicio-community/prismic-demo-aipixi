@@ -97,8 +97,8 @@ const Cover = ({ slice }: CoverProps): JSX.Element => {
 				<Heading
 					ref={title}
 					as="h2"
-					size="lg"
-					className="max-w-xl px-10 text-center text-white lg:text-5xl lg:leading-tight"
+					size="xl"
+					className="max-w-3xl px-10 text-center text-white lg:text-5xl lg:leading-tight"
 				>
 					<PrismicText field={slice.primary.title} />
 				</Heading>

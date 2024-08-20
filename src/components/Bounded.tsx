@@ -33,7 +33,7 @@ export const Bounded = forwardRef<HTMLElement, BoundedProps>(
 					outerClassName,
 				)}
 			>
-				<div className={clsx("mx-auto w-full max-w-7xl", className)}>
+				<div className={clsx("mx-auto w-full max-w-[90rem]", className)}>
 					{children}
 				</div>
 			</Comp>

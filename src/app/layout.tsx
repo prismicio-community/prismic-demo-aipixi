@@ -1,5 +1,4 @@
-import { MuseoModerno } from "next/font/google";
-import { Roboto } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import clsx from "clsx";
 
@@ -10,18 +9,11 @@ import { Footer } from "@/components/Footer";
 
 import "./globals.css";
 
-const museoModerno = MuseoModerno({
+const plusJakartaSans = Plus_Jakarta_Sans({
 	subsets: ["latin"],
-	weight: ["600"],
+	weight: ["400", "600", "700"],
 	display: "swap",
-	variable: "--font-museo-moderno",
-});
-const roboto = Roboto({
-	subsets: ["latin"],
-	weight: ["400", "700"],
-	style: ["normal", "italic"],
-	display: "swap",
-	variable: "--font-roboto",
+	variable: "--font-plus-jakarta-sans",
 });
 
 export default function RootLayout({
@@ -32,7 +24,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={clsx(museoModerno.variable, roboto.variable)}
+			className={clsx(plusJakartaSans.variable)}
 			suppressHydrationWarning
 		>
 			<body

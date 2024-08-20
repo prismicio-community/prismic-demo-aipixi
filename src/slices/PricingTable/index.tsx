@@ -11,6 +11,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clsx from "clsx";
+import { BadgeCheck } from "lucide-react";
 
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
@@ -29,8 +30,8 @@ const PricingTable = ({ slice }: PricingTableProps): JSX.Element => {
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: container.current,
-					start: "top 80%",
-					end: "bottom 80%",
+					start: "top 90%",
+					end: "bottom 100%",
 					scrub: true,
 				},
 			});
@@ -38,9 +39,9 @@ const PricingTable = ({ slice }: PricingTableProps): JSX.Element => {
 			tl.fromTo(
 				".pricing-card",
 				{
-					scale: 0.8,
+					scale: 0.9,
 					autoAlpha: 0,
-					y: 40,
+					y: 20,
 				},
 				{
 					scale: 1,
@@ -143,7 +144,17 @@ const PricingTable = ({ slice }: PricingTableProps): JSX.Element => {
 							Start with this plan
 						</button>
 						<div className="features mx-auto mt-4 max-w-xs sm:mt-6">
-							<PrismicRichText field={item.features} />
+							<PrismicRichText
+								field={item.features}
+								components={{
+									listItem: ({ children }) => (
+										<li className="relative py-3 pl-10 before:absolute before:left-0 before:top-0 before:block before:h-px before:w-full before:bg-primary-text before:opacity-25 before:content-[''] first:before:hidden">
+											<BadgeCheck className="absolute left-0 top-1/2 -translate-y-1/2 transform" />
+											{children}
+										</li>
+									),
+								}}
+							/>
 						</div>
 					</div>
 				))}

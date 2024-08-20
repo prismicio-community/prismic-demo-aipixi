@@ -1,12 +1,53 @@
+"use client";
+
 import type { Content } from "@prismicio/client";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
+import { motion, useScroll } from "framer-motion";
+
 import { Heading } from "@/components/Heading";
 import { Bounded } from "@/components/Bounded";
+import { useRef } from "react";
 
 type ImageGridProps = SliceComponentProps<Content.ImageGridSlice>;
+
+const Image = ({ item, i }: { item: any; i: number }) => {
+	const scrollRef = useRef<HTMLDivElement>(null);
+	const { scrollYProgress } = useScroll({
+		target: scrollRef,
+		offset: ["start end", "end end"],
+	});
+
+	return (
+		<motion.div
+			ref={scrollRef}
+			style={{ opacity: scrollYProgress }}
+			key={item.label}
+			className={clsx(
+				"relative",
+				i % 6 === 0 || i % 6 === 5
+					? "col-span-2 row-span-2"
+					: "col-span-1 row-span-1",
+				i % 6 === 4 && "md:col-start-1",
+			)}
+		>
+			<PrismicNextImage
+				field={item.image}
+				sizes={getImageSizes(i)}
+				className="rounded-lg"
+			/>
+			<Heading
+				as="span"
+				size="xs"
+				className="absolute bottom-4 left-4 text-white md:bottom-6 md:left-8"
+			>
+				{item.label}
+			</Heading>
+		</motion.div>
+	);
+};
 
 const ImageGrid = ({ slice }: ImageGridProps): JSX.Element => {
 	return (
@@ -16,29 +57,7 @@ const ImageGrid = ({ slice }: ImageGridProps): JSX.Element => {
 			</Heading>
 			<div className="mt-8 grid grid-flow-row-dense grid-cols-2 gap-4 md:mt-16 md:grid-cols-3 md:gap-10">
 				{slice.primary.images.map((item, i) => (
-					<div
-						key={item.label}
-						className={clsx(
-							"relative",
-							i % 6 === 0 || i % 6 === 5
-								? "col-span-2 row-span-2"
-								: "col-span-1 row-span-1",
-							i % 6 === 4 && "md:col-start-1",
-						)}
-					>
-						<PrismicNextImage
-							field={item.image}
-							sizes={getImageSizes(i)}
-							className="rounded-lg"
-						/>
-						<Heading
-							as="span"
-							size="xs"
-							className="absolute bottom-4 left-4 text-white md:bottom-6 md:left-8"
-						>
-							{item.label}
-						</Heading>
-					</div>
+					<Image key={i} item={item} i={i} />
 				))}
 			</div>
 		</Bounded>

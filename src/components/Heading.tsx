@@ -16,12 +16,12 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
 			<Comp
 				ref={ref}
 				className={clsx(
-					"font-heading",
+					"font-heading font-bold",
 					size === "xs" && "text-sm leading-snug md:text-2xl md:leading-snug",
 					size === "sm" && "text-lg leading-snug md:text-2xl md:leading-snug",
 					size === "md" && "text-2xl leading-snug lg:text-3xl lg:leading-snug",
 					size === "lg" && "text-2xl leading-snug md:text-4xl md:leading-snug",
-					size === "xl" && "text-3xl leading-snug lg:text-5xl lg:leading-tight",
+					size === "xl" && "text-4xl leading-snug lg:text-6xl lg:leading-tight",
 					className,
 				)}
 				{...otherProps}

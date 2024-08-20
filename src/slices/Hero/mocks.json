@@ -45,6 +45,16 @@
 						"value": []
 					}
 				]
+			},
+			"social_proof_text": {
+				"__TYPE__": "FieldContent",
+				"value": "height",
+				"type": "Text"
+			},
+			"social_proof_rating": {
+				"__TYPE__": "FieldContent",
+				"value": "59",
+				"type": "Number"
 			}
 		},
 		"items": [
@@ -119,6 +129,16 @@
 						"value": []
 					}
 				]
+			},
+			"social_proof_text": {
+				"__TYPE__": "FieldContent",
+				"value": "below",
+				"type": "Text"
+			},
+			"social_proof_rating": {
+				"__TYPE__": "FieldContent",
+				"value": "49",
+				"type": "Number"
 			}
 		},
 		"items": [

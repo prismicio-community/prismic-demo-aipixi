@@ -734,6 +734,26 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	links: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryLinksItem>>;
+
+	/**
+	 * Social proof text field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.social_proof_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	social_proof_text: prismic.KeyTextField;
+
+	/**
+	 * Social proof rating field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Number
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.social_proof_rating
+	 * - **Documentation**: https://prismic.io/docs/field#number
+	 */
+	social_proof_rating: prismic.NumberField;
 }
 
 /**
@@ -782,6 +802,26 @@ export interface HeroSliceLeftPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	links: prismic.GroupField<Simplify<HeroSliceLeftPrimaryLinksItem>>;
+
+	/**
+	 * Social proof text field in *Hero → Text on Left → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.left.primary.social_proof_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	social_proof_text: prismic.KeyTextField;
+
+	/**
+	 * Social proof rating field in *Hero → Text on Left → Primary*
+	 *
+	 * - **Field Type**: Number
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.left.primary.social_proof_rating
+	 * - **Documentation**: https://prismic.io/docs/field#number
+	 */
+	social_proof_rating: prismic.NumberField;
 }
 
 /**

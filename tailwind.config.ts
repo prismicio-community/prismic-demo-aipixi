@@ -19,8 +19,8 @@ export default {
 				},
 			},
 			fontFamily: {
-				heading: ["var(--font-museo-moderno)", "sans-serif"],
-				sans: ["var(--font-roboto)", "sans-serif"],
+				heading: ["var(--font-plus-jakarta-sans)", "sans-serif"],
+				sans: ["var(--font-plus-jakarta-sans)", "sans-serif"],
 				system: [
 					"ui-sans-serif",
 					"system-ui",

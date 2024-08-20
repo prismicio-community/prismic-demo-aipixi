@@ -23,10 +23,12 @@ export default function SliceSimulatorPage({
 
 	return (
 		<SliceSimulator>
-			<Background />
-			<main className="relative">
-				<SliceZone slices={slices} components={components} />
-			</main>
+			<div className="dark:bg-primary-background">
+				<Background />
+				<main className="relative">
+					<SliceZone slices={slices} components={components} />
+				</main>
+			</div>
 		</SliceSimulator>
 	);
 }
