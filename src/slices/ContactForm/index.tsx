@@ -40,13 +40,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 					</div>
 				</div>
 
-				<form
-					className="mt-6 md:mt-0 md:w-1/2"
-					name={slice.primary.formName ?? "form"}
-					action="/"
-					data-netlify="true"
-					netlify-honeypot="bot-field"
-				>
+				<form className="mt-6 md:mt-0 md:w-1/2" action="/">
 					{slice.primary.fields.map((item) => (
 						<div key={item.label} className="mt-6 first:mt-0">
 							<label>
@@ -70,19 +64,8 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 							</label>
 						</div>
 					))}
-					<input
-						type="hidden"
-						name="form-name"
-						value={slice.primary.formName ?? "form"}
-					/>
-					<div className="hidden">
-						<label htmlFor="bot-field">
-							Don&apos;t fill this out if you&apos;re human
-						</label>
-						<input id="bot-field" name="bot-field" type="text" />
-					</div>
 					<Button type="submit" className="mt-8">
-						{slice.primary.buttonText}
+						{slice.primary.submitButtonLabel}
 					</Button>
 				</form>
 			</motion.div>

@@ -84,6 +84,7 @@ const Cover = ({ slice }: CoverProps): JSX.Element => {
 					<PrismicNextImage
 						field={slice.primary.filteredImage}
 						className="w-full"
+						alt=""
 					/>
 				)}
 			</div>
@@ -91,6 +92,7 @@ const Cover = ({ slice }: CoverProps): JSX.Element => {
 				<PrismicNextImage
 					field={slice.primary.originalImage}
 					className="w-full"
+					alt=""
 				/>
 			</div>
 			<div className="absolute inset-0 flex items-center justify-center">

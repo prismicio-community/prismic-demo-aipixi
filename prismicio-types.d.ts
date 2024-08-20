@@ -376,7 +376,7 @@ export type CallToActionSlice = prismic.SharedSlice<
  */
 export interface ContactFormSliceDefaultPrimaryFieldsItem {
 	/**
-	 * Field label field in *ContactForm → Default → Primary → Fields*
+	 * Field Label field in *ContactForm → Default → Primary → Fields*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -386,7 +386,7 @@ export interface ContactFormSliceDefaultPrimaryFieldsItem {
 	label: prismic.KeyTextField;
 
 	/**
-	 * Field placeholder field in *ContactForm → Default → Primary → Fields*
+	 * Field Placeholder field in *ContactForm → Default → Primary → Fields*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -396,7 +396,7 @@ export interface ContactFormSliceDefaultPrimaryFieldsItem {
 	placeholder: prismic.KeyTextField;
 
 	/**
-	 * Field type field in *ContactForm → Default → Primary → Fields*
+	 * Field Type field in *ContactForm → Default → Primary → Fields*
 	 *
 	 * - **Field Type**: Select
 	 * - **Placeholder**: *None*
@@ -435,26 +435,6 @@ export interface ContactFormSliceDefaultPrimary {
 	description: prismic.RichTextField;
 
 	/**
-	 * Form Name field in *ContactForm → Default → Primary*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: Unique name for form handler
-	 * - **API ID Path**: contact_form.default.primary.formName
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */
-	formName: prismic.KeyTextField;
-
-	/**
-	 * Button text field in *ContactForm → Default → Primary*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.default.primary.buttonText
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */
-	buttonText: prismic.KeyTextField;
-
-	/**
 	 * Fields field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Group
@@ -465,6 +445,16 @@ export interface ContactFormSliceDefaultPrimary {
 	fields: prismic.GroupField<
 		Simplify<ContactFormSliceDefaultPrimaryFieldsItem>
 	>;
+
+	/**
+	 * Submit Button Label field in *ContactForm → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.default.primary.submitButtonLabel
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	submitButtonLabel: prismic.KeyTextField;
 }
 
 /**

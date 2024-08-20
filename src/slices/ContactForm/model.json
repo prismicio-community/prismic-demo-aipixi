@@ -1,82 +1,80 @@
 {
-	"id": "contact_form",
-	"type": "SharedSlice",
-	"name": "ContactForm",
-	"description": "ContactForm",
-	"variations": [
-		{
-			"id": "default",
-			"name": "Default",
-			"docURL": "...",
-			"version": "sktwi1xtmkfgx8626",
-			"description": "ContactForm",
-			"primary": {
-				"title": {
-					"type": "StructuredText",
-					"config": {
-						"label": "Title",
-						"placeholder": "The title of the section",
-						"allowTargetBlank": true,
-						"single": "heading2"
-					}
-				},
-				"description": {
-					"type": "StructuredText",
-					"config": {
-						"label": "Description",
-						"placeholder": "A nice description of your product",
-						"allowTargetBlank": true,
-						"multi": "paragraph,strong,em,hyperlink"
-					}
-				},
-				"formName": {
-					"config": {
-						"label": "Form Name",
-						"placeholder": "Unique name for form handler"
-					},
-					"type": "Text"
-				},
-				"buttonText": {
-					"config": {
-						"label": "Button text",
-						"placeholder": ""
-					},
-					"type": "Text"
-				},
-				"fields": {
-					"type": "Group",
-					"config": {
-						"label": "Fields",
-						"repeat": true,
-						"fields": {
-							"label": {
-								"config": {
-									"label": "Field label",
-									"placeholder": ""
-								},
-								"type": "Text"
-							},
-							"placeholder": {
-								"config": {
-									"label": "Field placeholder",
-									"placeholder": ""
-								},
-								"type": "Text"
-							},
-							"type": {
-								"config": {
-									"label": "Field type",
-									"placeholder": "",
-									"options": ["Text input", "Email input", "Multiline text"],
-									"default_value": "Text input"
-								},
-								"type": "Select"
-							}
-						}
-					}
-				}
-			},
-			"imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-		}
-	]
+  "id": "contact_form",
+  "type": "SharedSlice",
+  "name": "ContactForm",
+  "description": "ContactForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ContactForm",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "The title of the section",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "A nice description of your product",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "fields": {
+          "type": "Group",
+          "config": {
+            "label": "Fields",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "config": {
+                  "label": "Field Label",
+                  "placeholder": ""
+                },
+                "type": "Text"
+              },
+              "placeholder": {
+                "config": {
+                  "label": "Field Placeholder",
+                  "placeholder": ""
+                },
+                "type": "Text"
+              },
+              "type": {
+                "config": {
+                  "label": "Field Type",
+                  "placeholder": "",
+                  "options": [
+                    "Text input",
+                    "Email input",
+                    "Multiline text"
+                  ],
+                  "default_value": "Text input"
+                },
+                "type": "Select"
+              }
+            }
+          }
+        },
+        "submitButtonLabel": {
+          "config": {
+            "label": "Submit Button Label",
+            "placeholder": ""
+          },
+          "type": "Text"
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "items": {}
+    }
+  ]
 }
