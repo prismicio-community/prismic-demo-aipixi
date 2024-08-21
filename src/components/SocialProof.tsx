@@ -48,42 +48,40 @@ export const SocialProof = ({ rating, quote, className }: SocialProofProps) => {
 	return (
 		<div
 			className={clsx(
-				"bg-primary-background/50 flex items-start justify-center rounded-lg md:justify-start",
+				"bg-primary-background/50 grid items-start justify-center gap-4 rounded-lg p-6 md:justify-start",
 				className,
 			)}
 		>
-			<div className="relative z-10 flex flex-col p-6">
-				<div className="flex items-center gap-4">
-					<div className="flex">
-						<Image
-							className="relative z-30 rounded-full border-4 border-white shadow-lg"
-							src="/pp1.webp"
-							width={48}
-							height={48}
-							alt=""
-						/>
-						<Image
-							className="relative z-20 -ml-7 rounded-full border-4 border-white shadow-lg"
-							src="/pp2.webp"
-							width={48}
-							height={48}
-							alt=""
-						/>
-						<Image
-							className="relative z-10 -ml-7 rounded-full border-4 border-white"
-							src="/pp3.webp"
-							width={48}
-							height={48}
-							alt=""
-						/>
-					</div>
-					<div className="flex gap-1">{generateStars(rating)}</div>
+			<div className="flex flex-wrap items-center gap-4">
+				<div className="flex">
+					<Image
+						className="relative z-30 rounded-full border-4 border-white shadow-lg"
+						src="/pp1.webp"
+						width={48}
+						height={48}
+						alt=""
+					/>
+					<Image
+						className="relative z-20 -ml-7 rounded-full border-4 border-white shadow-lg"
+						src="/pp2.webp"
+						width={48}
+						height={48}
+						alt=""
+					/>
+					<Image
+						className="relative z-10 -ml-7 rounded-full border-4 border-white"
+						src="/pp3.webp"
+						width={48}
+						height={48}
+						alt=""
+					/>
 				</div>
-				<p className="mt-4 text-lg font-medium italic opacity-75">
-					<span className="-ml-1">&ldquo;</span>
-					{quote}&rdquo;
-				</p>
+				<div className="flex gap-1">{generateStars(rating)}</div>
 			</div>
+			<p className="text-lg font-medium italic opacity-75">
+				<span className="-ml-1">&ldquo;</span>
+				{quote}&rdquo;
+			</p>
 		</div>
 	);
 };

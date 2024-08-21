@@ -17,7 +17,7 @@ export function DemoBanner() {
 	}, []);
 
 	return (
-		<div className="pointer-events-none fixed left-0 right-0 top-0 z-20 p-8">
+		<div className="pointer-events-none fixed left-0 right-0 top-0 z-[70] p-8">
 			<Chat>
 				<ChatMessage show={isShowing}>👋 Hey! How does it look?</ChatMessage>
 				<ChatMessage show={isShowing2}>

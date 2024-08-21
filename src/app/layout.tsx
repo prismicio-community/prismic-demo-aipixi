@@ -33,7 +33,7 @@ export default function RootLayout({
 			>
 				<ThemeProvider attribute="class">
 					<Background />
-					{/* <DemoBanner /> */}
+					<DemoBanner />
 					<Header />
 					<main className="relative">{children}</main>
 					<Footer />

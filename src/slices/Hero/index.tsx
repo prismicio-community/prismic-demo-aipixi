@@ -20,7 +20,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 			{isFilled.image(slice.primary.image) && (
 				<PrismicNextImage
 					field={slice.primary.image}
-					className="w-1/2 md:col-span-6 md:w-full lg:col-span-5"
+					className={clsx(
+						"w-1/2 md:col-span-6 md:w-full lg:col-span-5",
+						slice.variation === "left" && "order-2",
+					)}
 				/>
 			)}
 			<div

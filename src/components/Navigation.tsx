@@ -72,7 +72,7 @@ export function NavigationDrawer(props: NavigationDrawerProps) {
 		<Portal>
 			<nav
 				className={clsx(
-					"fixed bottom-0 right-0 top-0 w-80 transform bg-secondary-background p-12 pt-32 shadow-2xl transition-transform ease-in-out",
+					"fixed bottom-0 right-0 top-0 z-50 w-80 transform bg-secondary-background p-12 pt-32 shadow-2xl transition-transform ease-in-out",
 					navigation.isOpen ? "translate-x-0" : "translate-x-full",
 				)}
 			>
@@ -132,7 +132,7 @@ export function NavigationOverlay() {
 					if (navigation.isOpen) navigation.close();
 				}}
 				className={clsx(
-					"fixed inset-0 bg-black transition-opacity",
+					"fixed inset-0 z-40 bg-black transition-opacity",
 					navigation.isOpen ? "opacity-50" : "pointer-events-none opacity-0",
 				)}
 			/>

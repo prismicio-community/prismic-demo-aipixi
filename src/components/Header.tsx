@@ -19,7 +19,7 @@ export async function Header() {
 	const settings = await client.getSingle("settings");
 
 	return (
-		<header className="absolute top-0 z-10 w-full">
+		<header className="absolute top-0 z-[60] w-full">
 			<div className="flex items-center justify-between px-6 pt-4 sm:px-10 sm:pt-10">
 				<PrismicNextLink href="/">
 					<Logo className="h-6 sm:h-8" />
