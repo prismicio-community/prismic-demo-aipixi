@@ -18,9 +18,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export default function RootLayout({
 	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html
 			lang="en"
@@ -28,12 +26,12 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<body
-				className="relative min-h-screen bg-primary-background text-primary-text"
+				className="relative min-h-screen bg-white leading-relaxed text-slate-800 dark:bg-slate-950 dark:text-white dark:antialiased"
 				suppressHydrationWarning
 			>
 				<ThemeProvider attribute="class">
 					<Background />
-					<DemoBanner />
+					{/*<DemoBanner />*/}
 					<Header />
 					<main className="relative">{children}</main>
 					<Footer />

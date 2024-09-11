@@ -400,14 +400,11 @@ export interface ContactFormSliceDefaultPrimaryFieldsItem {
 	 *
 	 * - **Field Type**: Select
 	 * - **Placeholder**: *None*
-	 * - **Default Value**: Text input
+	 * - **Default Value**: Text
 	 * - **API ID Path**: contact_form.default.primary.fields[].type
 	 * - **Documentation**: https://prismic.io/docs/field#select
 	 */
-	type: prismic.SelectField<
-		"Text input" | "Email input" | "Multiline text",
-		"filled"
-	>;
+	type: prismic.SelectField<"Text" | "Email" | "Textarea", "filled">;
 }
 
 /**

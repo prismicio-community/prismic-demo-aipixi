@@ -1,98 +1,50 @@
-"use client";
-
-import { useRef } from "react";
 import { asText, type Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
 import {
 	PrismicRichText,
 	PrismicText,
-	SliceComponentProps,
+	type SliceComponentProps,
 } from "@prismicio/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-import { Bounded } from "@/components/Bounded";
-import { Heading } from "@/components/Heading";
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+import { PrismicNextImage } from "@prismicio/next";
 
 type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
 
-const Features = ({ slice }: FeaturesProps): JSX.Element => {
-	const container = useRef<HTMLElement>(null);
-
-	useGSAP(
-		() => {
-			const tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: container.current,
-					end: "center 75%",
-					scrub: true,
-				},
-			});
-
-			tl.fromTo(
-				".features-part",
-				{
-					scale: 0.9,
-					autoAlpha: 0,
-					y: 20,
-				},
-				{
-					scale: 1,
-					autoAlpha: 1,
-					y: 0,
-					ease: "power1.inOut",
-					stagger: 0.2,
-				},
-			);
-		},
-		{ scope: container },
-	);
-
+export default function Features({ slice }: FeaturesProps) {
 	return (
-		<Bounded
-			as="section"
-			className="lg:grid lg:grid-cols-12 lg:gap-10"
-			ref={container}
-		>
-			<Heading
-				as="h2"
-				size="lg"
-				className="features-part max-w-xl lg:col-span-4"
-			>
+		<section className="mx-auto my-16 grid w-[calc(100vw-4rem)] max-w-screen-xl gap-8 lg:my-40 lg:grid-cols-3">
+			<h2 className="max-w-xl font-heading text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
 				<PrismicText field={slice.primary.title} />
-			</Heading>
-			<div className="sm:mt-8 sm:grid sm:grid-cols-8 sm:gap-10 lg:col-span-8 lg:mt-0">
+			</h2>
+			<ul className="grid gap-8 sm:grid-cols-2 lg:col-span-2">
 				{slice.primary.features.map((item) => (
-					<div
-						key={asText(item.title)}
-						className="features-part mt-8 grid grid-cols-4 gap-4 sm:col-span-4 sm:mt-0"
-					>
-						<div className="col-span-1">
-							<div className="h-12 w-12 overflow-hidden rounded-full bg-secondary-background p-3 md:h-16 md:w-16 md:p-4">
-								<PrismicNextImage
-									field={item.icon}
-									className="h-6 w-6 md:h-8 md:w-8"
-									alt=""
-								/>
-							</div>
-						</div>
-						<div className="col-span-3">
-							<Heading as="h3" size="sm" className="mt-3 md:mt-4">
-								<PrismicText field={item.title} />
-							</Heading>
-							<div className="mt-2 text-sm opacity-70 lg:text-base">
-								<PrismicRichText field={item.text} />
-							</div>
-						</div>
-					</div>
+					<Feature key={asText(item.text)} feature={item} />
 				))}
-			</div>
-		</Bounded>
+			</ul>
+		</section>
 	);
+}
+
+type FeatureProps = {
+	feature: Content.FeaturesSliceDefaultPrimaryFeaturesItem;
 };
 
-export default Features;
+function Feature({ feature }: FeatureProps) {
+	return (
+		<li className="flex gap-4">
+			<div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white dark:bg-slate-950 md:mb-4 md:size-14">
+				<PrismicNextImage
+					field={feature.icon}
+					className="size-6 md:size-7"
+					alt=""
+				/>
+			</div>
+			<div className="pt-3">
+				<h3 className="mb-3 font-heading text-lg font-bold leading-snug md:text-2xl md:leading-snug">
+					<PrismicText field={feature.title} />
+				</h3>
+				<div className="text-sm opacity-70 lg:text-base lg:leading-relaxed">
+					<PrismicRichText field={feature.text} />
+				</div>
+			</div>
+		</li>
+	);
+}
