@@ -3,7 +3,6 @@ import { ThemeProvider } from "next-themes";
 import clsx from "clsx";
 
 import { Background } from "@/components/Background";
-import { DemoBanner } from "@/components/DemoBanner";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -31,7 +30,6 @@ export default function RootLayout({
 			>
 				<ThemeProvider attribute="class">
 					<Background />
-					{/*<DemoBanner />*/}
 					<Header />
 					<main className="relative">{children}</main>
 					<Footer />
