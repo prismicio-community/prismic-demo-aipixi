@@ -26,7 +26,7 @@ export default function Image({ slice }: ImageProps) {
 					slice.variation === "left" ? "lg:col-start-1" : "lg:col-start-5",
 				)}
 			>
-				<h2 className="font-heading text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
+				<h2 className="text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
 					<PrismicText field={slice.primary.title} />
 				</h2>
 				<div className="text-sm opacity-70 lg:text-base lg:leading-relaxed">
@@ -34,7 +34,7 @@ export default function Image({ slice }: ImageProps) {
 				</div>
 				<PrismicNextLink
 					field={slice.primary.ctaLink}
-					className="self-start rounded-lg bg-violet-600 px-8 py-4 font-heading font-semibold text-white transition hover:bg-violet-500"
+					className="self-start rounded-lg bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-500"
 				>
 					{slice.primary.ctaLabel}
 				</PrismicNextLink>

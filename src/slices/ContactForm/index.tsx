@@ -11,7 +11,7 @@ export default function ContactForm({ slice }: ContactFormProps) {
 	return (
 		<section className="mx-auto my-16 grid w-[calc(100vw-4rem)] max-w-screen-xl items-baseline gap-6 md:grid-cols-2 md:gap-10 lg:my-40 lg:gap-28">
 			<div>
-				<h2 className="mb-4 font-heading text-2xl font-bold leading-snug md:mb-8 md:text-4xl md:leading-snug">
+				<h2 className="mb-4 text-2xl font-bold leading-snug md:mb-8 md:text-4xl md:leading-snug">
 					<PrismicText field={slice.primary.title} />
 				</h2>
 				<div className="grid gap-4 text-sm opacity-70 md:text-base md:leading-relaxed">
@@ -25,7 +25,7 @@ export default function ContactForm({ slice }: ContactFormProps) {
 				))}
 				<button
 					type="submit"
-					className="mt-4 inline-block justify-self-start rounded-lg bg-violet-600 px-8 py-4 font-heading font-semibold text-white transition hover:bg-violet-500"
+					className="mt-4 inline-block justify-self-start rounded-lg bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-500"
 				>
 					{slice.primary.submitButtonLabel}
 				</button>
@@ -46,7 +46,7 @@ function Field({ field }: FieldProps) {
 
 	return (
 		<label className="grid gap-4">
-			<span className="font-heading font-semibold">{field.label}</span>
+			<span className="font-semibold">{field.label}</span>
 			{field.type === "Textarea" ? (
 				<textarea name={name} placeholder={placeholder} className={className} />
 			) : (

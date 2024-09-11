@@ -20,7 +20,7 @@ export default function Hero({ slice }: HeroProps) {
 				className="mx-auto w-1/2 md:w-full"
 			/>
 			<div className="grid content-center justify-center gap-8">
-				<h1 className="max-w-xl text-center font-heading text-3xl font-bold leading-snug md:text-left lg:text-5xl lg:leading-tight">
+				<h1 className="max-w-xl text-center text-3xl font-bold leading-snug md:text-left lg:text-5xl lg:leading-tight">
 					<PrismicText field={slice.primary.title} />
 				</h1>
 				<ul className="flex flex-col items-center gap-4 md:items-start">
@@ -28,7 +28,7 @@ export default function Hero({ slice }: HeroProps) {
 						<li key={item.label}>
 							<PrismicNextLink
 								field={item.link}
-								className="inline-block rounded-lg bg-violet-600 px-8 py-4 font-heading font-semibold text-white transition hover:bg-violet-500"
+								className="inline-block rounded-lg bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-500"
 							>
 								{item.label}
 							</PrismicNextLink>

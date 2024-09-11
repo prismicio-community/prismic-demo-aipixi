@@ -61,7 +61,7 @@ type SectionProps = {
 function Section({ heading, children }: SectionProps) {
 	return (
 		<div>
-			<h2 className="mb-4 font-heading text-lg font-bold leading-snug md:text-2xl md:leading-snug lg:mb-6">
+			<h2 className="mb-4 text-lg font-bold leading-snug md:text-2xl md:leading-snug lg:mb-6">
 				{heading}
 			</h2>
 			<div className="text-sm opacity-70 lg:text-base">{children}</div>

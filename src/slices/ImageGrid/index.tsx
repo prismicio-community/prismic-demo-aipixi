@@ -8,7 +8,7 @@ type ImageGridProps = SliceComponentProps<Content.ImageGridSlice>;
 export default function ImageGrid({ slice }: ImageGridProps) {
 	return (
 		<section className="mx-auto my-16 w-[calc(100vw-4rem)] max-w-screen-xl lg:my-40">
-			<h2 className="mb-8 text-center font-heading text-2xl font-bold leading-snug md:mb-16 md:text-4xl md:leading-snug">
+			<h2 className="mb-8 text-center text-2xl font-bold leading-snug md:mb-16 md:text-4xl md:leading-snug">
 				<PrismicText field={slice.primary.title} />
 			</h2>
 			<div className="grid grid-flow-dense grid-cols-2 gap-4 md:grid-cols-3 md:gap-10">
@@ -44,7 +44,7 @@ function ImageGridImage({ image, index }: ImageGridItemProps) {
 				sizes={sizes}
 				className="rounded-lg"
 			/>
-			<span className="absolute bottom-4 left-4 font-heading text-sm font-bold leading-snug text-white md:bottom-6 md:left-8 md:text-2xl md:leading-snug">
+			<span className="absolute bottom-4 left-4 text-sm font-bold leading-snug text-white md:bottom-6 md:left-8 md:text-2xl md:leading-snug">
 				{image.label}
 			</span>
 		</div>

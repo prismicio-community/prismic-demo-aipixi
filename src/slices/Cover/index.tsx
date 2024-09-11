@@ -40,7 +40,7 @@ export default function Cover({ slice }: CoverProps) {
 				/>
 			</div>
 			<div className="absolute inset-0 flex items-center justify-center">
-				<h2 className="max-w-3xl px-10 text-center font-heading text-3xl font-bold leading-snug text-white lg:text-5xl lg:leading-tight">
+				<h2 className="max-w-3xl px-10 text-center text-3xl font-bold leading-snug text-white lg:text-5xl lg:leading-tight">
 					<PrismicText field={slice.primary.title} />
 				</h2>
 			</div>

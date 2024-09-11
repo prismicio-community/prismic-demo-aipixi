@@ -18,12 +18,12 @@ export default function CallToAction({ slice }: CallToActionProps) {
 			/>
 
 			<div className="p-8 lg:p-16">
-				<h2 className="mb-6 font-heading text-2xl font-bold leading-snug lg:text-4xl lg:leading-snug">
+				<h2 className="mb-6 text-2xl font-bold leading-snug lg:text-4xl lg:leading-snug">
 					<PrismicText field={slice.primary.title} />
 				</h2>
 				<PrismicNextLink
 					field={slice.primary.link}
-					className="inline-block rounded-lg bg-violet-600 px-8 py-4 font-heading font-semibold text-white transition hover:bg-violet-500"
+					className="inline-block rounded-lg bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-500"
 				>
 					{slice.primary.label}
 				</PrismicNextLink>

@@ -19,11 +19,11 @@ export default function PricingTable({ slice }: PricingTableProps) {
 
 	return (
 		<section className="mx-auto my-16 grid w-[calc(100vw-4rem)] max-w-screen-xl justify-items-center gap-8 lg:my-40">
-			<h2 className="text-center font-heading text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
+			<h2 className="text-center text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
 				<PrismicText field={slice.primary.title} />
 			</h2>
 
-			<div className="flex items-center gap-6 font-heading">
+			<div className="flex items-center gap-6">
 				<button
 					type="button"
 					className={clsx(
@@ -79,7 +79,7 @@ type PriceCardProps = {
 function PriceCard({ item, isYearlyPricing }: PriceCardProps) {
 	return (
 		<div className="grid content-start gap-4 rounded-lg bg-white p-10 dark:bg-slate-950 sm:gap-6 lg:w-1/3">
-			<h3 className="text-center font-heading text-2xl font-bold leading-snug lg:text-3xl lg:leading-snug">
+			<h3 className="text-center text-2xl font-bold leading-snug lg:text-3xl lg:leading-snug">
 				<PrismicText field={item.name} />
 			</h3>
 
@@ -87,7 +87,7 @@ function PriceCard({ item, isYearlyPricing }: PriceCardProps) {
 				{item.tagline}
 			</div>
 
-			<div className="-mr-4 flex justify-center text-center font-heading text-xl">
+			<div className="-mr-4 flex justify-center text-center text-xl">
 				<span className="leading-6">€</span>
 				<span className="number mx-1 text-6xl">
 					{isYearlyPricing ? item.yearly : item.monthly}

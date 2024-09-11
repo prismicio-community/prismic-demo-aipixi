@@ -11,7 +11,7 @@ type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
 export default function Features({ slice }: FeaturesProps) {
 	return (
 		<section className="mx-auto my-16 grid w-[calc(100vw-4rem)] max-w-screen-xl gap-8 lg:my-40 lg:grid-cols-3">
-			<h2 className="max-w-xl font-heading text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
+			<h2 className="max-w-xl text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
 				<PrismicText field={slice.primary.title} />
 			</h2>
 			<ul className="grid gap-8 sm:grid-cols-2 lg:col-span-2">
@@ -38,7 +38,7 @@ function Feature({ feature }: FeatureProps) {
 				/>
 			</div>
 			<div className="pt-3">
-				<h3 className="mb-3 font-heading text-lg font-bold leading-snug md:text-2xl md:leading-snug">
+				<h3 className="mb-3 text-lg font-bold leading-snug md:text-2xl md:leading-snug">
 					<PrismicText field={feature.title} />
 				</h3>
 				<div className="text-sm opacity-70 lg:text-base lg:leading-relaxed">
