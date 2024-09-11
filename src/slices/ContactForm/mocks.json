@@ -56,7 +56,7 @@
 								"type",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "Multiline text",
+									"value": "Text",
 									"type": "Select"
 								}
 							]

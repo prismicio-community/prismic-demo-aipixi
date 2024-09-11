@@ -2,6 +2,5 @@
 	"repositoryName": "prismicio-try-test",
 	"adapter": "@slicemachine/adapter-next",
 	"libraries": ["./src/slices"],
-	"localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
-	"apiEndpoint": ""
+	"localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }

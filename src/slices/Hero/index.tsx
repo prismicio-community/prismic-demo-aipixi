@@ -1,67 +1,84 @@
-import { type Content, isFilled } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import Image, { ImageProps } from "next/image";
+import { type Content } from "@prismicio/client";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
 
-import { Bounded } from "@/components/Bounded";
-import { Heading } from "@/components/Heading";
-import { PrismicNextButtonLink } from "@/components/PrismicNextButtonLink";
-import { SocialProof } from "@/components/SocialProof";
+import { Icon } from "@/components/Icon";
+
+import person1 from "./person-1.webp";
+import person2 from "./person-2.webp";
+import person3 from "./person-3.webp";
 
 type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
-const Hero = ({ slice }: HeroProps): JSX.Element => {
+export default function Hero({ slice }: HeroProps) {
 	return (
-		<Bounded
-			as="section"
-			paddingY="none"
-			className="grid min-h-screen content-center items-center justify-items-center gap-8 md:grid-cols-12 md:gap-10"
-		>
-			{isFilled.image(slice.primary.image) && (
-				<PrismicNextImage
-					field={slice.primary.image}
-					className={clsx(
-						"w-1/2 md:col-span-6 md:w-full lg:col-span-5",
-						slice.variation === "left" && "order-2",
-					)}
-				/>
-			)}
-			<div
-				className={clsx(
-					"text-center",
-					slice.primary.image.url &&
-						"grid gap-8 md:col-span-6 md:gap-10 md:text-left lg:col-span-7",
-				)}
-			>
-				<Heading as="h1" size="xl" className="max-w-xl">
+		<section className="mx-auto grid min-h-screen w-[calc(100vw-4rem)] max-w-screen-xl content-center items-center gap-8 py-16 md:grid-cols-2 md:gap-10 lg:gap-24 lg:py-40">
+			<PrismicNextImage
+				field={slice.primary.image}
+				className="mx-auto w-1/2 md:w-full"
+			/>
+			<div className="grid content-center justify-center gap-8">
+				<h1 className="max-w-xl text-center text-3xl font-bold leading-snug md:text-left lg:text-5xl lg:leading-tight">
 					<PrismicText field={slice.primary.title} />
-				</Heading>
-				{isFilled.group(slice.primary.links) && (
-					<ul className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
-						{slice.primary.links.map((item) => (
-							<li key={item.label}>
-								<PrismicNextButtonLink
-									field={item.link}
-									key={item.label}
-									className="w-full sm:w-auto"
-								>
-									{item.label}
-								</PrismicNextButtonLink>
-							</li>
-						))}
-					</ul>
-				)}
-				{isFilled.number(slice.primary.social_proof_rating) &&
-				isFilled.keyText(slice.primary.social_proof_quote) ? (
-					<SocialProof
-						rating={slice.primary.social_proof_rating}
-						quote={slice.primary.social_proof_quote}
-						className="max-w-96"
-					/>
-				) : null}
+				</h1>
+				<ul className="flex flex-col items-center gap-4 md:items-start">
+					{slice.primary.links.map((item) => (
+						<li key={item.label}>
+							<PrismicNextLink
+								field={item.link}
+								className="inline-block rounded-lg bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-500"
+							>
+								{item.label}
+							</PrismicNextLink>
+						</li>
+					))}
+				</ul>
+				<div className="mx-auto grid max-w-96 items-start justify-center gap-4 rounded-lg bg-white/50 p-6 dark:bg-slate-950/50 md:mx-0 md:justify-start">
+					<div className="flex items-center gap-4">
+						<Avatar src={person1} className="z-30" />
+						<Avatar src={person2} className="z-20" />
+						<Avatar src={person3} className="z-10" />
+						<Stars count={slice.primary.social_proof_rating ?? 0} />
+					</div>
+					<p className="text-lg font-medium italic opacity-75">
+						<span className="-ml-1">&ldquo;</span>
+						{slice.primary.social_proof_quote}&rdquo;
+					</p>
+				</div>
 			</div>
-		</Bounded>
+		</section>
 	);
+}
+
+function Avatar({ className, ...otherProps }: Omit<ImageProps, "alt">) {
+	return (
+		<Image
+			className={clsx(
+				"relative -ml-11 size-12 rounded-full border-4 border-white shadow-md first:ml-0",
+				className,
+			)}
+			alt=""
+			{...otherProps}
+		/>
+	);
+}
+
+type StarsProps = {
+	count: number;
 };
 
-export default Hero;
+function Stars({ count }: StarsProps) {
+	return (
+		<div className="flex gap-1 text-yellow-500">
+			{Array.from({ length: Math.ceil(count) }).map((_, i) => (
+				<Icon
+					key={i}
+					name={count - i > 1 || count - i === 1 ? "star" : "halfStar"}
+					className="size-5"
+				/>
+			))}
+		</div>
+	);
+}

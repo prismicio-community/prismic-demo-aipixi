@@ -1,70 +1,44 @@
-"use client";
-
-import { isFilled, type Content } from "@prismicio/client";
+import { type Content } from "@prismicio/client";
 import {
 	PrismicRichText,
 	PrismicText,
 	SliceComponentProps,
 } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
-
-import { useScrollTriggerFadeIn } from "@/lib/useScrollTriggerFadeIn";
-import { PrismicNextButtonLink } from "@/components/PrismicNextButtonLink";
-import { Bounded } from "@/components/Bounded";
-import { Heading } from "@/components/Heading";
 
 type ImageProps = SliceComponentProps<Content.ImageSlice>;
 
-const Image = ({ slice }: ImageProps): JSX.Element => {
-	const container = useScrollTriggerFadeIn();
-
+export default function Image({ slice }: ImageProps) {
 	return (
-		<Bounded ref={container} as="section">
-			<div className="-mx-6 flex flex-col sm:-mx-10 sm:grid sm:grid-cols-12 md:mx-0 lg:gap-10">
-				<div
-					style={{ paddingBottom: 100 + "%" }}
-					className={clsx(
-						"relative order-1 overflow-hidden sm:col-span-6 sm:row-span-full sm:self-stretch lg:rounded-lg",
-						slice.variation === "left"
-							? "sm:col-start-7 md:rounded-r-lg"
-							: "sm:col-start-1 md:rounded-l-lg",
-					)}
-				>
-					<PrismicNextImage
-						field={slice.primary.image}
-						fill
-						className="object-cover"
-					/>
+		<section className="mx-auto my-16 grid max-w-screen-xl overflow-hidden sm:grid-cols-12 md:w-[calc(100vw-4rem)] md:rounded-lg lg:my-40 lg:items-center">
+			<PrismicNextImage
+				field={slice.primary.image}
+				sizes="(min-width: 1280px) 1280px, 100vw"
+				className={clsx(
+					"col-span-6 h-full object-cover sm:row-span-full lg:rounded-lg",
+					slice.variation === "left" ? "sm:col-start-7" : "sm:col-start-1",
+				)}
+			/>
+			<div
+				className={clsx(
+					"col-span-6 flex flex-col justify-center gap-6 bg-white p-8 dark:bg-slate-950 sm:row-span-full lg:col-span-8 lg:gap-8 lg:rounded-lg lg:p-16",
+					slice.variation === "left" ? "lg:col-start-1" : "lg:col-start-5",
+				)}
+			>
+				<h2 className="text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
+					<PrismicText field={slice.primary.title} />
+				</h2>
+				<div className="text-sm opacity-70 lg:text-base lg:leading-relaxed">
+					<PrismicRichText field={slice.primary.content} />
 				</div>
-
-				<div
-					className={clsx(
-						"relative order-2 flex flex-col items-start justify-center bg-secondary-background p-8 sm:col-span-6 sm:row-span-full sm:self-stretch lg:col-span-8 lg:self-center lg:rounded-lg lg:p-16",
-						slice.variation === "left"
-							? "sm:col-start-1 md:rounded-l-lg lg:col-start-1"
-							: "sm:col-start-7 md:rounded-r-lg lg:col-start-5",
-					)}
+				<PrismicNextLink
+					field={slice.primary.ctaLink}
+					className="self-start rounded-lg bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-500"
 				>
-					<Heading as="h2" size="lg">
-						<PrismicText field={slice.primary.title} />
-					</Heading>
-
-					<div className="rich-text-content mt-6 text-sm opacity-70 lg:text-base">
-						<PrismicRichText field={slice.primary.content} />
-					</div>
-					{isFilled.keyText(slice.primary.ctaLabel) && (
-						<PrismicNextButtonLink
-							field={slice.primary.ctaLink}
-							className="mt-6 lg:mt-8"
-						>
-							{slice.primary.ctaLabel}
-						</PrismicNextButtonLink>
-					)}
-				</div>
+					{slice.primary.ctaLabel}
+				</PrismicNextLink>
 			</div>
-		</Bounded>
+		</section>
 	);
-};
-
-export default Image;
+}

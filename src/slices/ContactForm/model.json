@@ -54,11 +54,11 @@
                   "label": "Field Type",
                   "placeholder": "",
                   "options": [
-                    "Text input",
-                    "Email input",
-                    "Multiline text"
+                    "Text",
+                    "Email",
+                    "Textarea"
                   ],
-                  "default_value": "Text input"
+                  "default_value": "Text"
                 },
                 "type": "Select"
               }

@@ -1,77 +1,52 @@
-"use client";
-
 import type { Content } from "@prismicio/client";
-import { PrismicText, SliceComponentProps } from "@prismicio/react";
+import { PrismicText, type SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
-import { useScrollTriggerFadeIn } from "@/lib/useScrollTriggerFadeIn";
-import { Heading } from "@/components/Heading";
-import { Bounded } from "@/components/Bounded";
-
 type ImageGridProps = SliceComponentProps<Content.ImageGridSlice>;
 
-const ImageGrid = ({ slice }: ImageGridProps): JSX.Element => {
+export default function ImageGrid({ slice }: ImageGridProps) {
 	return (
-		<Bounded as="section">
-			<Heading as="h2" size="lg" className="mx-auto max-w-xl text-center">
+		<section className="mx-auto my-16 w-[calc(100vw-4rem)] max-w-screen-xl lg:my-40">
+			<h2 className="mb-8 text-center text-2xl font-bold leading-snug md:mb-16 md:text-4xl md:leading-snug">
 				<PrismicText field={slice.primary.title} />
-			</Heading>
-			<div className="mt-8 grid grid-flow-row-dense grid-cols-2 gap-4 md:mt-16 md:grid-cols-3 md:gap-10">
+			</h2>
+			<div className="grid grid-flow-dense grid-cols-2 gap-4 md:grid-cols-3 md:gap-10">
 				{slice.primary.images.map((item, index) => (
-					<ImageGridItem key={item.label} item={item} index={index} />
+					<ImageGridImage key={item.label} image={item} index={index} />
 				))}
 			</div>
-		</Bounded>
+		</section>
 	);
+}
+
+type ImageGridItemProps = {
+	image: Content.ImageGridSliceDefaultPrimaryImagesItem;
+	index: number;
 };
 
-function ImageGridItem({
-	item,
-	index,
-}: {
-	item: Content.ImageGridSliceDefaultPrimaryImagesItem;
-	index: number;
-}) {
-	const container = useScrollTriggerFadeIn<HTMLDivElement>();
+function ImageGridImage({ image, index }: ImageGridItemProps) {
+	const isLarge = index % 6 === 0 || index % 6 === 5;
+	const sizes = isLarge
+		? "(max-width: 768) 100vw, 66vw"
+		: "(max-width: 768) 50vw, 33vw";
 
 	return (
 		<div
-			ref={container}
 			className={clsx(
 				"relative",
-				index % 6 === 0 || index % 6 === 5
-					? "col-span-2 row-span-2"
-					: "col-span-1 row-span-1",
+				isLarge && "col-span-2 row-span-2",
 				index % 6 === 4 && "md:col-start-1",
 			)}
 		>
 			<PrismicNextImage
-				field={item.image}
-				sizes={getImageSizes(index)}
+				field={image.image}
+				sizes={sizes}
 				className="rounded-lg"
 			/>
-			<Heading
-				as="span"
-				size="xs"
-				className="absolute bottom-4 left-4 text-white md:bottom-6 md:left-8"
-			>
-				{item.label}
-			</Heading>
+			<span className="absolute bottom-4 left-4 text-sm font-bold leading-snug text-white md:bottom-6 md:left-8 md:text-2xl md:leading-snug">
+				{image.label}
+			</span>
 		</div>
 	);
 }
-
-function getImageSizes(index: number) {
-	let sizes = "";
-
-	if (index % 6 === 0 || index % 6 === 5) {
-		sizes += "(max-width: 768) 100vw, 66vw";
-	} else {
-		sizes += "(max-width: 768) 50vw, 33vw";
-	}
-
-	return sizes;
-}
-
-export default ImageGrid;

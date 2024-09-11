@@ -53,18 +53,13 @@ export function Navigation(props: NavigationProps) {
 	);
 }
 
-type NavigationLinkProps = {
-	field: LinkField;
+type NavigationDrawerProps = {
 	className?: string;
 	children?: ReactNode;
 };
 
-type NavigationDrawerProps = {
-	children?: ReactNode;
-};
-
 export function NavigationDrawer(props: NavigationDrawerProps) {
-	const { children } = props;
+	const { children, className } = props;
 
 	const navigation = useNavigation();
 
@@ -72,8 +67,9 @@ export function NavigationDrawer(props: NavigationDrawerProps) {
 		<Portal>
 			<nav
 				className={clsx(
-					"fixed bottom-0 right-0 top-0 z-50 w-80 transform bg-secondary-background p-12 pt-32 shadow-2xl transition-transform ease-in-out",
+					"fixed bottom-0 right-0 top-0 z-50 w-80 transform bg-white p-12 pt-32 shadow-2xl transition-transform ease-in-out dark:bg-slate-950",
 					navigation.isOpen ? "translate-x-0" : "translate-x-full",
+					className,
 				)}
 			>
 				{children}
@@ -81,6 +77,12 @@ export function NavigationDrawer(props: NavigationDrawerProps) {
 		</Portal>
 	);
 }
+
+type NavigationLinkProps = {
+	field: LinkField;
+	className?: string;
+	children?: ReactNode;
+};
 
 export function NavigationLink(props: NavigationLinkProps) {
 	const { field, className, children } = props;

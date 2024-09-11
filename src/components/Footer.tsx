@@ -1,110 +1,70 @@
-import { createClient, isFilled } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+import { ReactNode } from "react";
 import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextLink } from "@prismicio/next";
 
-import { repositoryName } from "@/prismicio";
+import { createClient } from "@/prismicio";
 
-import { Bounded } from "./Bounded";
 import { Logo } from "./Logo";
-import { Heading } from "./Heading";
+import { Icon } from "./Icon";
 
 export async function Footer() {
-	const client = createClient(repositoryName);
+	const client = createClient();
 	const settings = await client.getSingle("settings");
 
 	return (
-		<Bounded
-			as="footer"
-			outerClassName="pt-8 lg:pt-24"
-			className="relative grid grid-cols-2 gap-10 sm:grid-cols-4 lg:grid-cols-6"
-		>
+		<section className="relative mx-auto grid w-[calc(100vw-4rem)] max-w-screen-xl grid-cols-2 gap-10 gap-8 pb-16 sm:grid-cols-4 lg:grid-cols-6 lg:pb-40">
 			<div className="col-span-2 sm:col-span-1 lg:col-span-3">
-				<PrismicNextLink href="/" className="justify-self-start">
-					<Logo className="mx-auto h-16 sm:mx-0 sm:h-10 lg:h-16" />
+				<PrismicNextLink href="/">
+					<Logo className="mx-auto w-40 sm:mx-0" />
 				</PrismicNextLink>
 			</div>
-			<div className="col-span-1">
-				<Heading as="h2" size="sm">
-					Menu
-				</Heading>
-				<nav className="mt-4 lg:mt-6">
-					{settings.data.menu.map((item) => (
-						<PrismicNextLink
-							key={item.label}
-							field={item.link}
-							className="mt-2 block text-sm opacity-70 first:mt-0 lg:mt-4 lg:text-base"
-						>
-							{item.label}
-						</PrismicNextLink>
-					))}
-				</nav>
-			</div>
-			<div className="col-span-1">
-				<Heading as="h2" size="sm">
-					Contact
-				</Heading>
-				<div className="contact mt-4 text-sm opacity-70 lg:mt-6 lg:text-base">
-					<PrismicRichText field={settings.data.contact} />
-				</div>
-			</div>
-			<div className="col-span-1">
-				<Heading as="h2" size="sm">
-					Social
-				</Heading>
-				<nav className="-mx-3 mt-4 flex lg:mt-6">
-					{isFilled.link(settings.data.instagram) && (
-						<PrismicNextLink field={settings.data.instagram} className="px-3">
-							<svg
-								className="h-6 w-6"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									fillRule="evenodd"
-									clipRule="evenodd"
-									d="M12 3C9.55575 3 9.24926 3.01037 8.28931 3.05418C7.33137 3.09788 6.67711 3.25 6.10463 3.4725C5.5128 3.70249 5.01087 4.01025 4.51056 4.5106C4.01022 5.01091 3.70246 5.51284 3.47247 6.10466C3.24996 6.67711 3.09784 7.33137 3.05414 8.28931C3.01034 9.24926 3 9.55575 3 12C3 14.4442 3.01034 14.7507 3.05414 15.7107C3.09784 16.6686 3.24996 17.3229 3.47247 17.8953C3.70246 18.4872 4.01022 18.9891 4.51056 19.4895C5.01087 19.9898 5.5128 20.2975 6.10463 20.5275C6.67711 20.75 7.33137 20.9022 8.28931 20.9459C9.24926 20.9896 9.55575 21 12 21C14.4442 21 14.7507 20.9896 15.7107 20.9459C16.6686 20.9022 17.3229 20.75 17.8953 20.5275C18.4872 20.2975 18.9891 19.9898 19.4895 19.4895C19.9898 18.9891 20.2975 18.4872 20.5275 17.8953C20.75 17.3229 20.9022 16.6686 20.9459 15.7107C20.9896 14.7507 21 14.4442 21 12C21 9.55575 20.9896 9.24926 20.9459 8.28931C20.9022 7.33137 20.75 6.67711 20.5275 6.10466C20.2975 5.51284 19.9898 5.01091 19.4895 4.5106C18.9891 4.01025 18.4872 3.70249 17.8953 3.4725C17.3229 3.25 16.6686 3.09788 15.7107 3.05418C14.7507 3.01037 14.4442 3 12 3ZM12 4.62166C14.4031 4.62166 14.6878 4.6308 15.6368 4.67411C16.5143 4.71416 16.9908 4.86076 17.3079 4.98398C17.728 5.14725 18.0278 5.34229 18.3428 5.65723C18.6577 5.97216 18.8528 6.272 19.016 6.69205C19.1393 7.0092 19.2859 7.48574 19.3259 8.36321C19.3692 9.31226 19.3784 9.59692 19.3784 12C19.3784 14.4031 19.3692 14.6878 19.3259 15.6368C19.2859 16.5143 19.1393 16.9908 19.016 17.3079C18.8528 17.728 18.6577 18.0278 18.3428 18.3428C18.0278 18.6577 17.728 18.8528 17.3079 19.016C16.9908 19.1393 16.5143 19.2859 15.6368 19.3259C14.6879 19.3692 14.4033 19.3784 12 19.3784C9.59671 19.3784 9.31215 19.3692 8.36321 19.3259C7.48574 19.2859 7.0092 19.1393 6.69205 19.016C6.27197 18.8528 5.97216 18.6577 5.65719 18.3428C5.34226 18.0278 5.14721 17.728 4.98398 17.3079C4.86072 16.9908 4.71412 16.5143 4.67408 15.6368C4.63076 14.6878 4.62162 14.4031 4.62162 12C4.62162 9.59692 4.63076 9.31226 4.67408 8.36321C4.71412 7.48574 4.86072 7.0092 4.98398 6.69205C5.14721 6.272 5.34226 5.97216 5.65719 5.65723C5.97216 5.34229 6.27197 5.14725 6.69205 4.98398C7.0092 4.86076 7.48574 4.71416 8.36321 4.67411C9.31226 4.6308 9.59692 4.62166 12 4.62166ZM11.9986 15.0002C10.3417 15.0002 8.99859 13.6571 8.99859 12.0003C8.99859 10.3434 10.3417 9.00024 11.9986 9.00024C13.6554 9.00024 14.9986 10.3434 14.9986 12.0003C14.9986 13.6571 13.6554 15.0002 11.9986 15.0002ZM11.9986 7.37862C9.44613 7.37862 7.37697 9.44778 7.37697 12.0003C7.37697 14.5527 9.44613 16.6219 11.9986 16.6219C14.5511 16.6219 16.6202 14.5527 16.6202 12.0003C16.6202 9.44778 14.5511 7.37862 11.9986 7.37862ZM16.8066 8.27571C17.4031 8.27571 17.8866 7.7922 17.8866 7.1957C17.8866 6.59924 17.4031 6.11573 16.8066 6.11573C16.2102 6.11573 15.7266 6.59924 15.7266 7.1957C15.7266 7.7922 16.2102 8.27571 16.8066 8.27571Z"
-									fill="currentColor"
-								/>
-							</svg>
-							<span className="sr-only">Instagram</span>
-						</PrismicNextLink>
-					)}
-					{isFilled.link(settings.data.twitter) && (
-						<PrismicNextLink field={settings.data.twitter} className="px-3">
-							<svg
-								className="h-6 w-6"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M8.66065 19.6259C15.4531 19.6259 19.1683 13.9984 19.1683 9.11824C19.1683 8.95842 19.1683 8.7993 19.1575 8.64089C19.8803 8.11808 20.5042 7.47082 21 6.7293C20.326 7.02795 19.611 7.22377 18.8789 7.31033C19.6496 6.84894 20.2269 6.12268 20.5025 5.26768C19.7776 5.69782 18.9844 6.001 18.1574 6.16409C17.4592 5.42156 16.4839 5 15.4647 5C13.4368 5 11.7682 6.66866 11.7682 8.69647C11.7682 8.97779 11.8003 9.25823 11.8639 9.53224C8.89609 9.38349 6.12711 7.9797 4.25279 5.67377C3.27812 7.35164 3.78244 9.52605 5.39614 10.6036C4.80851 10.5862 4.23349 10.4276 3.72 10.1414V10.1881C3.72049 11.9394 4.96618 13.4616 6.68279 13.8083C6.13914 13.9566 5.56859 13.9782 5.0153 13.8717C5.49789 15.3723 6.88951 16.4067 8.46553 16.4363C7.15807 17.4638 5.54204 18.022 3.87912 18.0203C3.58528 18.0198 3.29173 18.002 3 17.967C4.6887 19.0507 6.65414 19.6286 8.66065 19.6259Z"
-									fill="currentColor"
-								/>
-							</svg>
-							<span className="sr-only">Twitter</span>
-						</PrismicNextLink>
-					)}
-					{isFilled.link(settings.data.facebook) && (
-						<PrismicNextLink field={settings.data.facebook} className="px-3">
-							<svg
-								className="h-6 w-6"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M21 12C21 7.02943 16.9706 3 12 3C7.02943 3 3 7.02943 3 12C3 16.4922 6.29119 20.2155 10.5938 20.8907V14.6016H8.30859V12H10.5938V10.0172C10.5938 7.76156 11.9374 6.51562 13.9932 6.51562C14.9779 6.51562 16.0078 6.69141 16.0078 6.69141V8.90625H14.8729C13.7549 8.90625 13.4062 9.59999 13.4062 10.3117V12H15.9023L15.5033 14.6016H13.4062V20.8907C17.7088 20.2155 21 16.4922 21 12Z"
-									fill="currentColor"
-								/>
-							</svg>
 
-							<span className="sr-only">Facebook</span>
-						</PrismicNextLink>
-					)}
-				</nav>
-			</div>
-		</Bounded>
+			<Section heading="Menu">
+				<ul className="flex flex-col gap-2 lg:gap-4">
+					{settings.data.menu.map((item) => (
+						<li key={item.label}>
+							<PrismicNextLink field={item.link}>{item.label}</PrismicNextLink>
+						</li>
+					))}
+				</ul>
+			</Section>
+
+			<Section heading="Contact">
+				<PrismicRichText field={settings.data.contact} />
+			</Section>
+
+			<Section heading="Social">
+				<div className="flex gap-6">
+					<PrismicNextLink field={settings.data.instagram}>
+						<Icon name="instagram" className="size-6" />
+						<span className="sr-only">Instagram</span>
+					</PrismicNextLink>
+					<PrismicNextLink field={settings.data.twitter}>
+						<Icon name="twitter" className="size-6" />
+						<span className="sr-only">Twitter</span>
+					</PrismicNextLink>
+					<PrismicNextLink field={settings.data.facebook}>
+						<Icon name="facebook" className="size-6" />
+						<span className="sr-only">Facebook</span>
+					</PrismicNextLink>
+				</div>
+			</Section>
+		</section>
+	);
+}
+
+type SectionProps = {
+	heading: ReactNode;
+	children?: ReactNode;
+};
+
+function Section({ heading, children }: SectionProps) {
+	return (
+		<div>
+			<h2 className="mb-4 text-lg font-bold leading-snug md:text-2xl md:leading-snug lg:mb-6">
+				{heading}
+			</h2>
+			<div className="text-sm opacity-70 lg:text-base">{children}</div>
+		</div>
 	);
 }

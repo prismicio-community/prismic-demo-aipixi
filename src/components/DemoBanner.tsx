@@ -40,7 +40,6 @@ function Chat(props: ChatProps) {
 
 type ChatMessageProps = {
 	show?: boolean;
-	// delay: number;
 	children?: ReactNode;
 };
 

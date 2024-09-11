@@ -1,34 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-[data-collapsible] + [data-collapsible] {
-	padding-top: 0;
-}
-
-:root {
-	--bg-primary: 249 249 249;
-	--bg-secondary: 255 255 255;
-	--text-primary: 34 38 44;
-
-	--brand-primary: 133 58 255;
-	--brand-primary-light: 171 120 255;
-}
-
-.dark {
-	--bg-primary: 4 9 33;
-	--bg-secondary: 16 23 57;
-	--text-primary: 255 255 255;
-}
-
-.dark-mode body {
-	@apply antialiased;
-}
-
-.container {
-	@apply max-w-[1280px];
-}
-
-.hero-slice + section {
-	@apply mt-0;
-}
