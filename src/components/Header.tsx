@@ -15,8 +15,8 @@ import { Icon } from "./Icon";
 
 export async function Header() {
 	return (
-		<header className="absolute top-0 z-[60] w-full">
-			<div className="flex items-center justify-between px-6 pt-4 sm:px-10 sm:pt-10">
+		<header className="relative z-[60] w-full">
+			<div className="flex items-center justify-between px-8 pt-4 sm:pt-10">
 				<PrismicNextLink href="/">
 					<Logo className="w-20" />
 					<span className="sr-only">Go to homepage</span>

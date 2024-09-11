@@ -1,10 +1,13 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { PrismicPreview } from "@prismicio/next";
 import clsx from "clsx";
 
+import { repositoryName } from "@/prismicio";
 import { Background } from "@/components/Background";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { IconSymbols } from "@/components/Icon";
 
 import "./globals.css";
 
@@ -34,6 +37,8 @@ export default function RootLayout({
 					<main className="relative">{children}</main>
 					<Footer />
 				</ThemeProvider>
+				<PrismicPreview repositoryName={repositoryName} />
+				<IconSymbols />
 			</body>
 		</html>
 	);

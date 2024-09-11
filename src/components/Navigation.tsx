@@ -111,16 +111,14 @@ export function NavigationTrigger(props: NavigationTriggerProps) {
 	const navigation = useNavigation();
 
 	return (
-		<>
-			<button
-				onClick={() => navigation.toggle()}
-				className="flex h-12 w-12 items-center justify-center"
-				type="button"
-				aria-label="Toggle menu"
-			>
-				{navigation.isOpen ? renderClose : renderOpen}
-			</button>
-		</>
+		<button
+			onClick={() => navigation.toggle()}
+			className="flex h-12 w-12 items-center justify-center"
+			type="button"
+			aria-label="Toggle menu"
+		>
+			{navigation.isOpen ? renderClose : renderOpen}
+		</button>
 	);
 }
 

@@ -2,13 +2,14 @@ import { ReactNode } from "react";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 
-import { createClient } from "@/prismicio";
+import { repositoryName } from "@/prismicio";
 
 import { Logo } from "./Logo";
 import { Icon } from "./Icon";
+import { createClient } from "@prismicio/client";
 
 export async function Footer() {
-	const client = createClient();
+	const client = createClient(repositoryName);
 	const settings = await client.getSingle("settings");
 
 	return (

@@ -14,10 +14,13 @@ type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 export default function Hero({ slice }: HeroProps) {
 	return (
-		<section className="mx-auto grid min-h-screen w-[calc(100vw-4rem)] max-w-screen-xl content-center items-center gap-8 py-16 md:grid-cols-2 md:gap-10 lg:gap-24 lg:py-40">
+		<section className="mx-auto my-16 grid min-h-[50vh] w-[calc(100vw-4rem)] max-w-screen-xl grid-flow-dense content-center items-center gap-8 md:grid-cols-2 md:gap-10 lg:my-40 lg:gap-24">
 			<PrismicNextImage
 				field={slice.primary.image}
-				className="mx-auto w-1/2 md:w-full"
+				className={clsx(
+					"mx-auto w-1/2 md:w-full",
+					slice.variation === "left" && "col-start-2",
+				)}
 			/>
 			<div className="grid content-center justify-center gap-8">
 				<h1 className="max-w-xl text-center text-3xl font-bold leading-snug md:text-left lg:text-5xl lg:leading-tight">
