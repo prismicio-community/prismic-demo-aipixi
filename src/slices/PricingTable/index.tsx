@@ -18,7 +18,7 @@ export default function PricingTable({ slice }: PricingTableProps) {
 	const [isYearlyPricing, setIsYearlyPricing] = useState(true);
 
 	return (
-		<section className="mx-auto my-16 grid w-[calc(100vw-4rem)] max-w-screen-xl justify-items-center gap-8 lg:my-40">
+		<section className="mx-auto grid w-[calc(100vw-4rem)] max-w-screen-xl justify-items-center gap-8 py-16 lg:py-40">
 			<h2 className="text-center text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
 				<PrismicText field={slice.primary.title} />
 			</h2>
