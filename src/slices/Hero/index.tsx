@@ -6,10 +6,6 @@ import clsx from "clsx";
 
 import { Icon } from "@/components/Icon";
 
-import person1 from "./person-1.webp";
-import person2 from "./person-2.webp";
-import person3 from "./person-3.webp";
-
 type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 export default function Hero({ slice }: HeroProps) {
@@ -40,9 +36,9 @@ export default function Hero({ slice }: HeroProps) {
 				</ul>
 				<div className="mx-auto grid max-w-96 items-start justify-center gap-4 rounded-lg bg-white/50 p-6 dark:bg-slate-950/50 md:mx-0 md:justify-start">
 					<div className="flex items-center gap-4">
-						<Avatar src={person1} className="z-30" />
-						<Avatar src={person2} className="z-20" />
-						<Avatar src={person3} className="z-10" />
+						<Avatar src="/person-1.webp" className="z-30" />
+						<Avatar src="/person-2.webp" className="z-20" />
+						<Avatar src="/person-3.webp" className="z-10" />
 						<Stars count={slice.primary.social_proof_rating ?? 0} />
 					</div>
 					<p className="text-lg font-medium italic opacity-75">
@@ -62,6 +58,8 @@ function Avatar({ className, ...otherProps }: Omit<ImageProps, "alt">) {
 				"relative -ml-11 size-12 rounded-full border-4 border-white shadow-md first:ml-0",
 				className,
 			)}
+			width={48}
+			height={48}
 			alt=""
 			{...otherProps}
 		/>
