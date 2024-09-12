@@ -1,7 +1,6 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { PrismicPreview } from "./PrismicPreview";
-import clsx from "clsx";
 
 import { repositoryName } from "@/prismicio";
 import { Background } from "@/components/Background";
@@ -25,7 +24,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={clsx(plusJakartaSans.variable)}
+			className={plusJakartaSans.variable}
 			suppressHydrationWarning
 		>
 			<body

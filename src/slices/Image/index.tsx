@@ -11,7 +11,7 @@ type ImageProps = SliceComponentProps<Content.ImageSlice>;
 
 export default function Image({ slice }: ImageProps) {
 	return (
-		<section className="mx-auto my-16 grid max-w-screen-xl overflow-hidden sm:grid-cols-12 md:w-[calc(100vw-4rem)] md:rounded-lg lg:my-40 lg:items-center">
+		<section className="mx-auto grid max-w-screen-xl overflow-hidden py-16 sm:grid-cols-12 md:w-[calc(100vw-4rem)] md:rounded-lg lg:items-center lg:py-40">
 			<PrismicNextImage
 				field={slice.primary.image}
 				sizes="(min-width: 1280px) 1280px, 100vw"

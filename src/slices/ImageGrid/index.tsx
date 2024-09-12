@@ -7,7 +7,7 @@ type ImageGridProps = SliceComponentProps<Content.ImageGridSlice>;
 
 export default function ImageGrid({ slice }: ImageGridProps) {
 	return (
-		<section className="mx-auto my-16 w-[calc(100vw-4rem)] max-w-screen-xl lg:my-40">
+		<section className="mx-auto w-[calc(100vw-4rem)] max-w-screen-xl py-16 lg:py-40">
 			<h2 className="mb-8 text-center text-2xl font-bold leading-snug md:mb-16 md:text-4xl md:leading-snug">
 				<PrismicText field={slice.primary.title} />
 			</h2>

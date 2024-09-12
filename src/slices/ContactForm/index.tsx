@@ -9,7 +9,7 @@ type ContactFormProps = SliceComponentProps<Content.ContactFormSlice>;
 
 export default function ContactForm({ slice }: ContactFormProps) {
 	return (
-		<section className="mx-auto my-16 grid w-[calc(100vw-4rem)] max-w-screen-xl items-baseline gap-6 md:grid-cols-2 md:gap-10 lg:my-40 lg:gap-28">
+		<section className="mx-auto grid w-[calc(100vw-4rem)] max-w-screen-xl items-baseline gap-6 py-16 md:grid-cols-2 md:gap-10 lg:gap-28 lg:py-40">
 			<div>
 				<h2 className="mb-4 text-2xl font-bold leading-snug md:mb-8 md:text-4xl md:leading-snug">
 					<PrismicText field={slice.primary.title} />
