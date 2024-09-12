@@ -8,9 +8,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
 type CoverProps = SliceComponentProps<Content.CoverSlice>;
 
 export default function Cover({ slice }: CoverProps) {
@@ -55,6 +52,8 @@ function useScrollEffect() {
 
 	useGSAP(
 		() => {
+			gsap.registerPlugin(ScrollTrigger);
+
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: containerRef.current,
