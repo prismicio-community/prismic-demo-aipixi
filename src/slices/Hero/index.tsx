@@ -18,10 +18,12 @@ export default function Hero({ slice }: HeroProps) {
 					slice.variation === "left" && "col-start-2",
 				)}
 			/>
+
 			<div className="grid content-center justify-center gap-8">
 				<h1 className="max-w-xl text-center text-3xl font-bold leading-snug md:text-left lg:text-5xl lg:leading-tight">
 					<PrismicText field={slice.primary.title} />
 				</h1>
+
 				<ul className="flex flex-col items-center gap-4 md:items-start">
 					{slice.primary.links.map((item) => (
 						<li key={item.label}>
@@ -34,6 +36,7 @@ export default function Hero({ slice }: HeroProps) {
 						</li>
 					))}
 				</ul>
+
 				<div className="mx-auto grid max-w-96 items-start justify-center gap-4 rounded-lg bg-white/50 p-6 dark:bg-slate-950/50 md:mx-0 md:justify-start">
 					<div className="flex items-center gap-4">
 						<Avatar src="/person-1.webp" className="z-30" />

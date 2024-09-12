@@ -20,6 +20,7 @@ export default function Image({ slice }: ImageProps) {
 					slice.variation === "left" ? "sm:col-start-7" : "sm:col-start-1",
 				)}
 			/>
+
 			<div
 				className={clsx(
 					"col-span-6 flex flex-col justify-center gap-6 bg-white p-8 dark:bg-slate-950 sm:row-span-full lg:col-span-8 lg:gap-8 lg:rounded-lg lg:p-16",
@@ -29,9 +30,11 @@ export default function Image({ slice }: ImageProps) {
 				<h2 className="text-2xl font-bold leading-snug md:text-4xl md:leading-snug">
 					<PrismicText field={slice.primary.title} />
 				</h2>
+
 				<div className="text-sm opacity-70 lg:text-base lg:leading-relaxed">
 					<PrismicRichText field={slice.primary.content} />
 				</div>
+
 				<PrismicNextLink
 					field={slice.primary.ctaLink}
 					className="self-start rounded-lg bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-500"
