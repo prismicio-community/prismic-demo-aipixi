@@ -1,8 +1,5 @@
 import Image from "next/image";
 
-import bgLightSVG from "@/assets/bg-light.svg";
-import bgDarkSVG from "@/assets/bg-dark.svg";
-
 export function Background() {
 	return (
 		<div className="pointer-events-none absolute inset-0 min-h-screen overflow-hidden dark:opacity-40">
@@ -19,14 +16,14 @@ export function Background() {
 const bgImages = (
 	<>
 		<Image
-			src={bgLightSVG}
+			src="/bg-light.svg"
 			alt=""
 			fill
 			className="absolute top-0 w-full dark:hidden"
 			priority
 		/>
 		<Image
-			src={bgDarkSVG}
+			src="/bg-dark.svg"
 			alt=""
 			fill
 			className="absolute top-0 hidden w-full dark:block"
