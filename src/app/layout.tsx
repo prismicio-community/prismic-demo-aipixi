@@ -27,10 +27,7 @@ export default function RootLayout({
 			className={plusJakartaSans.variable}
 			suppressHydrationWarning
 		>
-			<body
-				className="relative min-h-screen bg-neutral-100 leading-relaxed text-slate-800 dark:bg-slate-950 dark:text-white dark:antialiased"
-				suppressHydrationWarning
-			>
+			<body className="relative min-h-screen bg-neutral-100 leading-relaxed text-slate-800 dark:bg-slate-950 dark:text-white dark:antialiased">
 				<ThemeProvider attribute="class">
 					<Background />
 					<Header />
