@@ -1,4 +1,5 @@
 import { PrismicNextLink } from "@prismicio/next";
+import { ThemeProvider } from "next-themes";
 
 import { createClient } from "@/prismicio";
 
@@ -22,7 +23,9 @@ export async function Header() {
 					<span className="sr-only">Go to homepage</span>
 				</PrismicNextLink>
 				<div className="relative -mr-3 flex">
-					<ThemeToggle />
+					<ThemeProvider attribute="class">
+						<ThemeToggle />
+					</ThemeProvider>
 					<HeaderNavigation />
 				</div>
 			</div>
