@@ -14,7 +14,7 @@ type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 export default function Hero({ slice }: HeroProps) {
 	return (
-		<section className="mx-auto mb-16 grid min-h-[50vh] w-[calc(100vw-4rem)] max-w-screen-xl grid-flow-dense content-center items-center gap-8 pt-16 md:grid-cols-2 md:gap-10 lg:mb-40 lg:gap-24 lg:pt-40">
+		<section className="mx-auto mb-16 grid min-h-screen w-[calc(100vw-4rem)] max-w-screen-xl grid-flow-dense content-center items-center gap-8 pt-16 md:grid-cols-2 md:gap-10 lg:mb-40 lg:gap-24 lg:pt-40">
 			<PrismicNextImage
 				field={slice.primary.image}
 				className={clsx(

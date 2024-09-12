@@ -11,6 +11,7 @@ export default {
 					"var(--font-plus-jakarta-sans)",
 					...defaultTheme.fontFamily.sans,
 				],
+				system: defaultTheme.fontFamily.sans,
 			},
 		},
 	},

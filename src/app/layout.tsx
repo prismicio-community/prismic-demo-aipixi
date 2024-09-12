@@ -1,6 +1,6 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { PrismicPreview } from "@prismicio/next";
+import { PrismicPreview } from "./PrismicPreview";
 import clsx from "clsx";
 
 import { repositoryName } from "@/prismicio";
@@ -10,6 +10,7 @@ import { Header } from "@/components/Header";
 import { IconSymbols } from "@/components/Icon";
 
 import "./globals.css";
+import { DemoBanner } from "./DemoBanner";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
 	subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
 				</ThemeProvider>
 				<PrismicPreview repositoryName={repositoryName} />
 				<IconSymbols />
+				<DemoBanner />
 			</body>
 		</html>
 	);
