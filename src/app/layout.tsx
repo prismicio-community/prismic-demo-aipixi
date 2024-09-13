@@ -20,10 +20,10 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<body className="relative min-h-screen bg-neutral-100 leading-relaxed text-slate-800 dark:bg-slate-950 dark:text-white dark:antialiased">
-				<Header />
-				<main>{children}</main>
-				<Footer />
 				<Background />
+				<Header />
+				<main className="relative">{children}</main>
+				<Footer />
 				<IconSymbols />
 				<DemoBanner />
 			</body>
