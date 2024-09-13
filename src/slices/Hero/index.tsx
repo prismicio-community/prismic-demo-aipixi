@@ -79,7 +79,7 @@ function Stars({ count }: StarsProps) {
 			{Array.from({ length: Math.ceil(count) }).map((_, i) => (
 				<Icon
 					key={i}
-					name={count - i > 1 || count - i === 1 ? "star" : "halfStar"}
+					name={count - i < 1 ? "halfStar" : "star"}
 					className="size-5"
 				/>
 			))}
