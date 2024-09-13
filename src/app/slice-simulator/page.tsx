@@ -15,7 +15,7 @@ export default function SliceSimulatorPage({
 
 	return (
 		<SliceSimulator>
-			<div className="bg-white dark:bg-slate-950">
+			<div className="bg-neutral-100 dark:bg-slate-950">
 				<Background />
 				<main className="relative">
 					<SliceZone slices={slices} components={components} />

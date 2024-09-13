@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Background() {
 	return (
-		<div className="pointer-events-none absolute inset-0 -z-10 min-h-screen overflow-hidden dark:opacity-40">
+		<div className="pointer-events-none absolute inset-0 min-h-screen overflow-hidden dark:opacity-40">
 			<div className="absolute left-0 right-0 top-0 pb-[186.66666667%]">
 				{bgImages}
 			</div>
