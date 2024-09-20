@@ -17,7 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
 	const home = await client.getSingle("home");
 
 	return {
-		title: prismic.asText(home.data.metaTitle),
-		description: prismic.asText(home.data.metaDescription),
+		title: prismic.asText(home.data.metaTitle) || "Aipixi",
+		description:
+			prismic.asText(home.data.metaDescription) ||
+			"Transform your photos effortlessly with AIPixi, the AI-powered photo editing app. Enhance, retouch, and create stunning images with advanced tools and intuitive features. Perfect for photographers of all levels.",
 	};
 }
