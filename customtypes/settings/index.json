@@ -79,13 +79,6 @@
 					"select": null
 				},
 				"type": "Link"
-			},
-			"slices": {
-				"type": "Slices",
-				"fieldset": "Slice Zone",
-				"config": {
-					"choices": {}
-				}
 			}
 		}
 	}
