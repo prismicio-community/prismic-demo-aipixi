@@ -45,6 +45,7 @@ export default function PricingTable({ slice }: PricingTableProps) {
 							isYearlyPricing && "translate-x-10 transform",
 						)}
 					/>
+					<span className="sr-only">Toggle monthly/yearly pricing</span>
 				</button>
 				<button
 					type="button"

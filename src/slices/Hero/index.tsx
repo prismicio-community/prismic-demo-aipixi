@@ -17,6 +17,7 @@ export default function Hero({ slice }: HeroProps) {
 					"mx-auto w-1/2 md:w-full",
 					slice.variation === "left" && "col-start-2",
 				)}
+				priority
 			/>
 
 			<div className="grid content-center justify-center gap-8">

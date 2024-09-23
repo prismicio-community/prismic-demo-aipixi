@@ -15,9 +15,14 @@ export default async function Index() {
 export async function generateMetadata(): Promise<Metadata> {
 	const client = createClient();
 	const home = await client.getSingle("home");
+	const settings = await client.getSingle("settings");
 
 	return {
-		title: prismic.asText(home.data.metaTitle),
-		description: prismic.asText(home.data.metaDescription),
+		title:
+			prismic.asText(home.data.metaTitle) ||
+			prismic.asText(settings.data.site_name),
+		description:
+			prismic.asText(home.data.metaDescription) ||
+			settings.data.fallback_meta_description,
 	};
 }
