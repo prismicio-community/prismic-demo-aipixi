@@ -145,8 +145,6 @@ export interface SettingsDocumentDataMenuItem {
 	label: prismic.KeyTextField;
 }
 
-type SettingsDocumentDataSlicesSlice = never;
-
 /**
  * Content for Settings documents
  */
@@ -227,17 +225,6 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
 	instagram: prismic.LinkField;
-
-	/**
-	 * Slice Zone field in *Settings*
-	 *
-	 * - **Field Type**: Slice Zone
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: settings.slices[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#slices
-	 */
-	slices: prismic.SliceZone<SettingsDocumentDataSlicesSlice>;
 }
 
 /**
@@ -1221,7 +1208,6 @@ declare module "@prismicio/client" {
 			SettingsDocument,
 			SettingsDocumentData,
 			SettingsDocumentDataMenuItem,
-			SettingsDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			CallToActionSlice,
 			CallToActionSliceDefaultPrimary,
