@@ -6,9 +6,9 @@ import { Background } from "@/components/Background";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { IconSymbols } from "@/components/Icon";
+import { DemoBanner } from "./DemoBanner";
 
 import "./globals.css";
-import { DemoBanner } from "./DemoBanner";
 
 export default function RootLayout({
 	children,
