@@ -6,6 +6,22 @@
 	"format": "custom",
 	"json": {
 		"Main": {
+			"site_name": {
+				"type": "StructuredText",
+				"config": {
+					"label": "Site Name",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "heading1"
+				}
+			},
+			"fallback_meta_description": {
+				"type": "Text",
+				"config": {
+					"label": "Fallback Meta Description",
+					"placeholder": ""
+				}
+			},
 			"menu": {
 				"config": {
 					"label": "Menu",
@@ -66,7 +82,10 @@
 			},
 			"slices": {
 				"type": "Slices",
-				"fieldset": "Slice Zone"
+				"fieldset": "Slice Zone",
+				"config": {
+					"choices": {}
+				}
 			}
 		}
 	}

@@ -152,6 +152,28 @@ type SettingsDocumentDataSlicesSlice = never;
  */
 interface SettingsDocumentData {
 	/**
+	 * Site Name field in *Settings*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.site_name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	site_name: prismic.TitleField;
+
+	/**
+	 * Fallback Meta Description field in *Settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.fallback_meta_description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	fallback_meta_description: prismic.KeyTextField;
+
+	/**
 	 * Menu field in *Settings*
 	 *
 	 * - **Field Type**: Group
@@ -207,7 +229,7 @@ interface SettingsDocumentData {
 	instagram: prismic.LinkField;
 
 	/**
-	 * `slices` field in *Settings*
+	 * Slice Zone field in *Settings*
 	 *
 	 * - **Field Type**: Slice Zone
 	 * - **Placeholder**: *None*

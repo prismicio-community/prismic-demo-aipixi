@@ -38,7 +38,6 @@ export default function PricingTable({ slice }: PricingTableProps) {
 					type="button"
 					className="h-10 w-20 rounded-full bg-white p-1 dark:bg-slate-950"
 					onClick={() => setIsYearlyPricing(!isYearlyPricing)}
-					aria-label="Toggle monthly/yearly pricing"
 				>
 					<span
 						className={clsx(
@@ -46,6 +45,7 @@ export default function PricingTable({ slice }: PricingTableProps) {
 							isYearlyPricing && "translate-x-10 transform",
 						)}
 					/>
+					<span className="sr-only">Toggle monthly/yearly pricing</span>
 				</button>
 				<button
 					type="button"

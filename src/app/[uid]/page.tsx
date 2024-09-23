@@ -21,10 +21,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const client = createClient();
 	const page = await client.getByUID("page", params.uid);
+	const settings = await client.getSingle("settings");
 
 	return {
-		title: prismic.asText(page.data.metaTitle),
-		description: prismic.asText(page.data.metaDescription),
+		title:
+			prismic.asText(page.data.metaTitle) ||
+			prismic.asText(settings.data.site_name),
+		description:
+			prismic.asText(page.data.metaDescription) ||
+			settings.data.fallback_meta_description,
 	};
 }
 

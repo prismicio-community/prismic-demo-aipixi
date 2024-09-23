@@ -15,8 +15,9 @@ export async function Footer() {
 	return (
 		<section className="relative mx-auto grid w-[calc(100vw-4rem)] max-w-screen-xl grid-cols-2 gap-8 pb-16 sm:grid-cols-4 lg:grid-cols-6 lg:pb-40">
 			<div className="col-span-2 sm:col-span-1 lg:col-span-3">
-				<PrismicNextLink href="/" aria-label="Aipixi">
+				<PrismicNextLink href="/">
 					<Logo className="mx-auto w-40 sm:mx-0" />
+					<span className="sr-only">Go to homepage</span>
 				</PrismicNextLink>
 			</div>
 
