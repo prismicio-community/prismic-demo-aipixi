@@ -1,5 +1,8 @@
 # Try Prismic: Aipixi
 
+> [!NOTE]
+> This is the finished code for a Prismic demo project. It is archived and no longer updated. To start a new Prismic project with Next.js, see the [Next.js guide](https://prismic.io/docs/nextjs).
+
 [Aipixi](https://prismic-demo-aipixi.vercel.app/) is a fictional AI-powered app created to show off [Prismic](https://prismic.io/), the headless website builder.
 
 **Try editing a page with Prismic at <https://prismic.io/try>**.
